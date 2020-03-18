@@ -2,6 +2,8 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -21,6 +23,16 @@ class Tag
      */
     private $title;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Page", mappedBy="tags")
+     */
+    private $pages;
+
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
+
     public function getId(): ?int
     {
         return $this->id;
@@ -34,6 +46,34 @@ class Tag
     public function setTitle(string $title): self
     {
         $this->title = $title;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Page[]
+     */
+    public function getPage(): Collection
+    {
+        return $this->page;
+    }
+
+    public function addPage(Page $page): self
+    {
+        if (!$this->page->contains($page)) {
+            $this->page[] = $page;
+            $page->addTag($this);
+        }
+
+        return $this;
+    }
+
+    public function removePage(Page $page): self
+    {
+        if ($this->page->contains($page)) {
+            $this->page->removeElement($page);
+            $page->removeTag($this);
+        }
 
         return $this;
     }

@@ -2,18 +2,20 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Repository\PageRepository;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class ComplexeController extends AbstractController
 {
     /**
-     * @Route("/complexe", name="complexe")
+     * @Route("/", name="complexe")
      */
-    public function index()
+    public function index(PageRepository $repo)
     {
+        $page= $repo->find(7);
         return $this->render('complexe/index.html.twig', [
-            'controller_name' => 'ComplexeController',
+            'page' => $page,
         ]);
     }
 }

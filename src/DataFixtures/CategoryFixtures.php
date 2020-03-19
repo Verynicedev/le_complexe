@@ -24,7 +24,6 @@ class CategoryFixtures extends Fixture
 
         $manager->persist($category2);
 
-
         $category3 = new Category();
         $category3->setTitle('Moins de 18 ans');
 

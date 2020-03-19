@@ -108,6 +108,12 @@ class Page
 
 
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="pages")
+     *
+     */
+    private $category;
+
     public function getId(): ?int
     {
         return $this->id;

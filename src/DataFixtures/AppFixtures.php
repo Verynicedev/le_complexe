@@ -10,39 +10,45 @@ use Doctrine\Common\DataFixtures\DependentFixtureInterface;
 class AppFixtures extends Fixture implements DependentFixtureInterface
 {
 
+
     public function load(ObjectManager $manager)
     {
         $page = new Page();
-        $page ->setTitle('PAGETEST')
-                    ->setContent("TEST CONTENT")
-                    // ->setImage('http://www.fondsecran.eu/a/get_photo/176653/1920/1080%27')
-                    // ->setImageName('')     
-
-            // ->setCreatedAt(new \DateTime())->setPublished(true)
-
-            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_1));
+        $page ->setTitle('Complexe')
+                    ->setContent("TEST CONTENT");
 
         $manager->persist($page);
 
         $page2 = new Page();
-        $page2 ->setTitle('PAGETEST 2')
+        $page2 ->setTitle('Restaurant')
                     ->setContent("TEST CONTENT 2")
-                    // ->setImage('http://www.fondsecran.eu/a/get_photo/176653/1920/1080%27')
-            // ->setCreatedAt(new \DateTime())->setPublished(true)
 
-            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_2));
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_4))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_5))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_6))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_7));
 
         $manager->persist($page2);
 
         $page3 = new Page();
-        $page3 ->setTitle('PAGETEST 3')
+        $page3 ->setTitle('Laser Game')
                     ->setContent("TEST CONTENT 3")
-                    // ->setImage('https://images2.alphacoders.com/894/thumb-1920-894283.jpg%27')
-            // ->setCreatedAt(new \DateTime())->setPublished(true)
 
-            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_3));
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_9))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_10))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_11));
 
         $manager->persist($page3);
+
+        $page4 = new Page();
+        $page4 ->setTitle('Réalité Virtuelle')
+                    ->setContent("TEST CONTENT 3")
+
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_1))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_2))
+            ->setCategory($this->getReference(CategoryFixtures::CATEGORY_3));
+
+        $manager->persist($page4);
 
         $manager->flush();
     }

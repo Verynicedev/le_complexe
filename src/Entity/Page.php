@@ -62,10 +62,13 @@ class Page
      */
     private $tags;
 
+
+
     public function __construct()
     {
+
         $this-> updatedAt = new DateTime();
-        $this->tags = new ArrayCollection();
+        $this-> tags = new ArrayCollection();
     }
       /**
      * @ORM\Column(type="datetime")
@@ -73,6 +76,11 @@ class Page
      * @var \DateTimeInterface|null
      */
     private $updatedAt;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
 
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
@@ -123,6 +131,7 @@ class Page
     public function setTitle(string $title): self
     {
         $this->title = $title;
+        $this-> slug = self::slugify($this->title);
 
         return $this;
     }
@@ -188,4 +197,43 @@ class Page
 
         return $this;
     }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
+
+        return $this;
+    }
+
+    public static function slugify($text)
+{
+  // replace non letter or digits by -
+  $text = preg_replace('~[^\pL\d]+~u', '-', $text);
+
+  // transliterate
+  $text = iconv('utf-8', 'us-ascii//TRANSLIT', $text);
+
+  // remove unwanted characters
+  $text = preg_replace('~[^-\w]+~', '', $text);
+
+  // trim
+  $text = trim($text, '-');
+
+  // remove duplicate -
+  $text = preg_replace('~-+~', '-', $text);
+
+  // lowercase
+  $text = strtolower($text);
+
+  if (empty($text)) {
+    return 'n-a';
+  }
+
+  return $text;
+}
 }

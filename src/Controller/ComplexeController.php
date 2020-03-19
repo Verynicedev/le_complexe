@@ -13,7 +13,7 @@ class ComplexeController extends AbstractController
      */
     public function index(PageRepository $repo)
     {
-        $page= $repo->find(7);
+        $page= $repo->find(4);
         return $this->render('complexe/index.html.twig', [
             'page' => $page,
         ]);

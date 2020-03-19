@@ -2,14 +2,17 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
+use DateTime;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\Collection;
 use Symfony\Component\HttpFoundation\File\File;
+use Doctrine\Common\Collections\ArrayCollection;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PageRepository")
+ * @Vich\Uploadable
  */
 class Page
 {
@@ -33,7 +36,8 @@ class Page
        /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      * 
-     * @Vich\UploadableField(mapping="page_image", fileNameProperty="imageName", size="imageSize")
+     * @Vich\UploadableField(mapping="page_image", fileNameProperty="imageName")
+     * @Assert\Image()
      * 
      * @var File|null
      */
@@ -60,6 +64,7 @@ class Page
 
     public function __construct()
     {
+        $this-> updatedAt = new DateTime();
         $this->tags = new ArrayCollection();
     }
       /**
@@ -105,15 +110,6 @@ class Page
         return $this->imageName;
     }
     
-
-
-
-    /**
-     * @ORM\ManyToOne(targetEntity="App\Entity\Category", inversedBy="pages")
-     *
-     */
-    private $category;
-
     public function getId(): ?int
     {
         return $this->id;

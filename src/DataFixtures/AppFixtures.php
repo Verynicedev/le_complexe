@@ -15,7 +15,9 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
         $page = new Page();
         $page ->setTitle('PAGETEST')
                     ->setContent("TEST CONTENT")
-                    ->setImageName('')
+                    // ->setImage('http://www.fondsecran.eu/a/get_photo/176653/1920/1080%27')
+                    // ->setImageName('')     
+
             // ->setCreatedAt(new \DateTime())->setPublished(true)
 
             ->setCategory($this->getReference(CategoryFixtures::CATEGORY_1));
@@ -25,7 +27,7 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
         $page2 = new Page();
         $page2 ->setTitle('PAGETEST 2')
                     ->setContent("TEST CONTENT 2")
-                    ->setImage('http://www.fondsecran.eu/a/get_photo/176653/1920/1080%27')
+                    // ->setImage('http://www.fondsecran.eu/a/get_photo/176653/1920/1080%27')
             // ->setCreatedAt(new \DateTime())->setPublished(true)
 
             ->setCategory($this->getReference(CategoryFixtures::CATEGORY_2));
@@ -35,7 +37,7 @@ class AppFixtures extends Fixture implements DependentFixtureInterface
         $page3 = new Page();
         $page3 ->setTitle('PAGETEST 3')
                     ->setContent("TEST CONTENT 3")
-                    ->setImage('https://images2.alphacoders.com/894/thumb-1920-894283.jpg%27')
+                    // ->setImage('https://images2.alphacoders.com/894/thumb-1920-894283.jpg%27')
             // ->setCreatedAt(new \DateTime())->setPublished(true)
 
             ->setCategory($this->getReference(CategoryFixtures::CATEGORY_3));

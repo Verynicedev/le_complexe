@@ -1,0 +1,35 @@
+<footer class="bg-primary text-center text-white p-4 d-flex flex-row">
+<div class="container">
+    <div class="col-12">
+        <div id="contact" class="pt-1 pb-1 bg-primary">
+            <h2 class="text-center text-light mb-2">Contactez-nous</h2>
+            
+            {{ form_start(form) }}
+            <div class="border rounded shadow pb-2 pt-2 col-12 col-sm-10 col-md-7 col-lg-6 col-xl-3 m-auto text-center">
+                {{ form_row(form.name) }}
+                {{ form_row(form.email) }}
+                {{ form_row(form.subject) }}
+                {{ form_row(form.message) }}
+                <input type="submit" name="submit" value="Envoyez" class="btn btn-success">
+            </div>
+            {{ form_end(form) }}
+        </div>
+        
+        <div>
+            <p>Cliquez en dessous pour appeler le 07 11 22 33 44</p>
+            <a href="tel:+33711223344" class="text-light"><button type="submit" name="submit" value="Appeler" class="btn btn-success">Appeler</button></a>
+        </div>
+    </div>
+
+    <div class="col-12">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.619465273774!2d5.576597915777465!3d43.656084960261616!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12ca281e3f12e12f%3A0x138f62ed1f56f3fd!2s1%20Chemin%20des%20Trois%20Francs%2C%2013860%20Peyrolles-en-Provence!5e0!3m2!1sfr!2sfr!4v1584714342461!5m2!1sfr!2sfr" width="400" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+    </div>
+    <div class="p-2">
+        <p>© Copyright 2020 Laetitia, Nagib, Eddy</p>
+        <p> <a href="#"><i class="fas fa-arrow-up iconb text-white float-right"></i></a>
+            {# <a href="https://github.com/Amar2050" target="_blank"><i class="fab fa-github p-3 iconb text-white"></i></a>
+            <a href="https://www.linkedin.com/in/amar-boutayeb-920369177/" target="_blank"><iclass="fab fa-linkedin p-3 iconb text-white"></i></a> #}   
+        </p>
+    </div>
+</div>
+</footer>

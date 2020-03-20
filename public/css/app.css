@@ -1,0 +1,53 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Photo by Fotis Fotopoulos on Unsplash */
+/* header {
+    background-image:url("../img/logoTheComplexe.jpg");
+	background-position: center center;
+	background-size: cover;
+	background-attachment: fixed;
+	height:60vh;
+} */
+
+.project-bg {
+    /* Photo by Ron Whitaker on Unsplash */
+	background-image: url("../img/9b9b701e37114ff4e92d85d28320ed60.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	/* height:80vh; */
+	margin: auto;
+}
+
+#about {
+	background: rgba(0, 0, 0, 0.5) ;
+}
+strong{
+	font-weight: normal;
+}
+.iconb{
+	font-size: 2em;
+}
+
+.listBW:hover{
+	color:white;
+	background: #1a1a1a;
+}
+.grow { 
+	transition: all .5s ease-in-out;
+}
+.grow:hover{ 
+	transform: scale(0.95);
+	border-radius: 20%;
+	border: solid 2px #4BBF73;
+}
+.error-message{
+	margin-top: -4em ! important;
+	margin-bottom: 4em !important;
+}
+
+.correctionMargin {
+	margin-left: -1em;
+}

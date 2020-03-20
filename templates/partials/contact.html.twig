@@ -1,0 +1,29 @@
+{% extends 'footer.html.twig' %}
+<!-- Contact -->
+<div id="contact" class="pt-5 pb-5">
+    <h2 class="text-center mb-5">Contactez-moi</h2>
+    <form class="border rounded shadow pb-5 pt-5 col-12 col-sm-10 col-md-7 col-lg-6 col-xl-6 m-auto text-center"
+        method="post">
+
+        <label for="name" class="text-danger">Nom *</label>
+        <input class="form-control text-center" type="text" id="name" name="name"
+            placeholder="Votre prénom et nom de famille" required>
+
+        <label for="email" class="text-danger p-1">E-mail *</label>
+        <input class="form-control text-center p-2" type="email" id="email" name="mail" placeholder="Votre e-mail"
+            required>
+
+        <label for="subject" class="text-danger p-1">Sujet *</label>
+        <input class="form-control text-center p-2" type="text" id="subject" name="subject"
+            placeholder="Le sujet de votre message" required>
+
+        <label for="message" class="text-danger p-1">Message *</label>
+        <textarea class="form-control text-center p-2" type="text" id="message" name="message"
+            placeholder="Pensez à communiquer votre numéro de téléphone si vous souhaitez être rappelé"
+            required></textarea><br>
+
+        {# <input type="submit" name="submit" value="Envoyez" class="btn btn-success"> #}
+    </form>
+</div>
+{% endblock %}
+<!-- End Contact -->

@@ -16,22 +16,22 @@ class ContactFormType extends AbstractType
         $builder
             ->add('name', TextType::class, [
             'label' => 'Prénom et Nom *',
-            'label_attr' => ['class' => 'text-light'],
+            'label_attr' => ['class' => 'text-primary'],
             'attr' => ['placeholder' => 'Votre nom complet', 'class' => 'text-center']
             ])
             ->add('email', TextType::class, [
                 'label' =>'E-mail *',
-                'label_attr' => ['class'=>'text-light'],
+                'label_attr' => ['class'=>'text-primary'],
                 'attr' => ['placeholder' => 'Entrez votre e-mail', 'class' => 'text-center']
             ])
             ->add('subject', TextType::class, [
             'label' => 'Sujet *',
-            'label_attr' => ['class' => 'text-light'],
+            'label_attr' => ['class' => 'text-primary'],
             'attr' => ['placeholder' => 'Le sujet de votre email', 'class' => 'text-center']
             ])
             ->add('message', TextareaType::class, [
             'label' => 'Message *',
-            'label_attr' => ['class' => 'text-light'],
+            'label_attr' => ['class' => 'text-primary'],
             'attr' => ['placeholder' => 'Le contenu de votre message', 'class' => 'text-center']
         ])
         ;

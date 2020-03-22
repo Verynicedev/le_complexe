@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryVirtual index{% endblock %}
+
+{% block body %}
+    <h1>CategoryVirtual index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_virtual in category_virtuals %}
+            <tr>
+                <td>{{ category_virtual.id }}</td>
+                <td>{{ category_virtual.nom }}</td>
+                <td>
+                    <a href="{{ path('category_virtual_show', {'id': category_virtual.id}) }}">show</a>
+                    <a href="{{ path('category_virtual_edit', {'id': category_virtual.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_virtual_new') }}">Create new</a>
+{% endblock %}

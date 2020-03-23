@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Virtual;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\CategoryVirtual;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Virtual|null find($id, $lockMode = null, $lockVersion = null)
@@ -19,6 +20,31 @@ class VirtualRepository extends ServiceEntityRepository
         parent::__construct($registry, Virtual::class);
     }
 
+    public function findAllWithJoin(){
+        $qb= $this->createQueryBuilder('v');
+        $qb ->orderBy('v.id','DESC')
+            ->join('v.category','c')
+            ->addSelect('c')
+            ->leftJoin('v.tag','t')
+            ->addSelect('t')
+            ;
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
+
+    public function findAllWithJoinByCategory(CategoryVirtual $category){
+        $qb= $this->createQueryBuilder('v');
+        $qb ->orderBy('v.nom','DESC')
+            ->join('v.category','c')
+            ->addSelect('c')
+            ->leftJoin('v.tag','t')
+            ->addSelect('t')
+            ->andWhere('c = ?1')
+            ->SetParameter(1, $category)
+            ;
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
     // /**
     //  * @return Virtual[] Returns an array of Virtual objects
     //  */

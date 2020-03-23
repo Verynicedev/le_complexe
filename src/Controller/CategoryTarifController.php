@@ -2,25 +2,25 @@
 
 namespace App\Controller;
 
-use App\Entity\Virtual;
-use App\Form\VirtualType;
 use App\Entity\ContactForm;
+use App\Entity\CategoryTarif;
 use App\Form\ContactFormType;
-use App\Repository\VirtualRepository;
+use App\Form\CategoryTarifType;
+use App\Repository\CategoryTarifRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/virtual")
+ * @Route("/category/tarif")
  */
-class VirtualController extends AbstractController
+class CategoryTarifController extends AbstractController
 {
     /**
-     * @Route("/", name="virtual_index", methods={"GET"})
+     * @Route("/", name="category_tarif_index", methods={"GET"})
      */
-    public function index(Request $request, VirtualRepository $virtualRepository): Response
+    public function index(Request $request,CategoryTarifRepository $categoryTarifRepository): Response
     {
         $contact = new ContactForm;
         $form = $this->createForm(ContactFormType::class, $contact);
@@ -32,15 +32,14 @@ class VirtualController extends AbstractController
                 'contact' => $contact
             ]);
         }
-
-        return $this->render('virtual/index.html.twig', [
-            'virtuals' => $virtualRepository->findAll(),
+        return $this->render('category_tarif/index.html.twig', [
+            'category_tarifs' => $categoryTarifRepository->findAll(),
             'form' => $form->createView()
         ]);
     }
 
     /**
-     * @Route("/new", name="virtual_new", methods={"GET","POST"})
+     * @Route("/new", name="category_tarif_new", methods={"GET","POST"})
      */
     public function new(Request $request): Response
     {
@@ -54,40 +53,40 @@ class VirtualController extends AbstractController
                 'contact' => $contact
             ]);
         }
-        
-        $virtual = new Virtual();
-        $form2 = $this->createForm(VirtualType::class, $virtual);
+
+        $categoryTarif = new CategoryTarif();
+        $form2 = $this->createForm(CategoryTarifType::class, $categoryTarif);
         $form2->handleRequest($request);
 
         if ($form2->isSubmitted() && $form2->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($virtual);
+            $entityManager->persist($categoryTarif);
             $entityManager->flush();
 
-            return $this->redirectToRoute('virtual_index');
+            return $this->redirectToRoute('category_tarif_index');
         }
 
-        return $this->render('virtual/new.html.twig', [
-            'virtual' => $virtual,
+        return $this->render('category_tarif/new.html.twig', [
+            'category_tarif' => $categoryTarif,
             'form' => $form->createView(),
-            'form2' => $form2->createView(),
+            'form2' => $form2->createView()
         ]);
     }
 
     /**
-     * @Route("/{id}", name="virtual_show", methods={"GET"})
+     * @Route("/{id}", name="category_tarif_show", methods={"GET"})
      */
-    public function show(Request $request, Virtual $virtual): Response
+    public function show(CategoryTarif $categoryTarif): Response
     {
-        return $this->render('virtual/show.html.twig', [
-            'virtual' => $virtual,
+        return $this->render('category_tarif/show.html.twig', [
+            'category_tarif' => $categoryTarif,
         ]);
     }
 
     /**
-     * @Route("/{id}/edit", name="virtual_edit", methods={"GET","POST"})
+     * @Route("/{id}/edit", name="category_tarif_edit", methods={"GET","POST"})
      */
-    public function edit(Request $request, Virtual $virtual): Response
+    public function edit(Request $request, CategoryTarif $categoryTarif): Response
     {
         $contact = new ContactForm;
         $form = $this->createForm(ContactFormType::class, $contact);
@@ -99,34 +98,34 @@ class VirtualController extends AbstractController
                 'contact' => $contact
             ]);
         }
-        
-        $form2 = $this->createForm(VirtualType::class, $virtual);
+
+        $form2 = $this->createForm(CategoryTarifType::class, $categoryTarif);
         $form2->handleRequest($request);
 
-        if ($form2->isSubmitted() && $form2->isValid()) {
+        if ($form3->isSubmitted() && $form3->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('virtual_index');
+            return $this->redirectToRoute('category_tarif_index');
         }
 
-        return $this->render('virtual/edit.html.twig', [
-            'virtual' => $virtual,
+        return $this->render('category_tarif/edit.html.twig', [
+            'category_tarif' => $categoryTarif,
             'form' => $form->createView(),
-            'form2' => $form2->createView(),
+            'form2' => $form2->createView()
         ]);
     }
 
     /**
-     * @Route("/{id}", name="virtual_delete", methods={"DELETE"})
+     * @Route("/{id}", name="category_tarif_delete", methods={"DELETE"})
      */
-    public function delete(Request $request, Virtual $virtual): Response
+    public function delete(Request $request, CategoryTarif $categoryTarif): Response
     {
-        if ($this->isCsrfTokenValid('delete'.$virtual->getId(), $request->request->get('_token'))) {
+        if ($this->isCsrfTokenValid('delete'.$categoryTarif->getId(), $request->request->get('_token'))) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->remove($virtual);
+            $entityManager->remove($categoryTarif);
             $entityManager->flush();
         }
 
-        return $this->redirectToRoute('virtual_index');
+        return $this->redirectToRoute('category_tarif_index');
     }
 }

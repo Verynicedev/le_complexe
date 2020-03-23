@@ -4,6 +4,9 @@ namespace App\Controller;
 
 use App\Entity\ContactForm;
 use App\Form\ContactFormType;
+use App\Entity\CategoryVirtual;
+use App\Repository\VirtualRepository;
+use App\Repository\CategoryVirtualRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -94,6 +97,55 @@ class PortfolioController extends AbstractController
         }
         return $this->render('realitevirtuelle/realitevirtuelle.html.twig', [
             'form' => $form->createView()
+        ]);
+    }
+
+     /**
+     * @Route("/realitevirtuelle/category", name="categoryVR")
+     */
+    public function categoryVirtual(VirtualRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('portfolio/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('realitevirtuelle/vueCategoryVirtual.html.twig', [
+            'form' => $form->createView(),
+            'jeux' => $repository->findBy([],['id'=>'DESC'])
+
+        ]);
+    }
+
+    /**
+     * @Route("/realitevirtuelle/category/{id<\d+>}", name="jeuVR")
+     */
+    public function showCategoryVirtual(CategoryVirtual $category, VirtualRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('portfolio/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('realitevirtuelle/vueJeuVirtual.html.twig', [
+            'form' => $form->createView(),
+            'category' => $category,
+            'jeux' => $repository->findAllWithJoinByCategory($category)
+
         ]);
     }
 }

@@ -126,6 +126,9 @@
     "ocramius/proxy-manager": {
         "version": "2.2.3"
     },
+    "php": {
+        "version": "7.4"
+    },
     "phpdocumentor/reflection-common": {
         "version": "2.0.0"
     },
@@ -222,6 +225,9 @@
     },
     "symfony/dotenv": {
         "version": "v4.3.5"
+    },
+    "symfony/error-handler": {
+        "version": "v4.4.5"
     },
     "symfony/event-dispatcher": {
         "version": "v4.3.5"

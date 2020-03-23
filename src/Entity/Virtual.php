@@ -94,4 +94,16 @@ class Virtual
         return $this;
     }
 
+    public function getExcerpt($max = 50){
+        $rawContent = strip_tags($this->content); 
+        if (strlen($rawContent)>$max){
+            $rawContent = substr($rawContent, 0, $max); 
+            $pos = strrpos($rawContent, ' '); 
+            if($pos !==false){
+                $rawContent = substr($rawContent, 0, $pos);
+            }
+            $rawContent .=' ...'; 
+        }
+        return $rawContent;
+    }
 }

@@ -13,7 +13,7 @@ html {
 
 .project-bg {
     /* Photo by Ron Whitaker on Unsplash */
-	background-image: url("../img/9b9b701e37114ff4e92d85d28320ed60.jpg");
+	background-image: url("../img/bgwood.jpg");
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -50,4 +50,8 @@ strong{
 
 .correctionMargin {
 	margin-left: -1em;
+}
+
+.vrpage{
+	font-family: 'Aldrich', sans-serif;
 }

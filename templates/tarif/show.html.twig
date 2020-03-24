@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tarif{% endblock %}
+
+{% block body %}
+    <h1>Tarif</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ tarif.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ tarif.nom }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ tarif.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix1</th>
+                <td>{{ tarif.prix1 }}</td>
+            </tr>
+            <tr>
+                <th>Prix2</th>
+                <td>{{ tarif.prix2 }}</td>
+            </tr>
+            <tr>
+                <th>Prix3</th>
+                <td>{{ tarif.prix3 }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('tarif_index') }}">back to list</a>
+
+    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}">edit</a>
+
+    {{ include('tarif/_delete_form.html.twig') }}
+{% endblock %}

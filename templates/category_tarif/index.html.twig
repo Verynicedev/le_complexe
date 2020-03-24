@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CategoryTarif index{% endblock %}
+
+{% block body %}
+    <h1>CategoryTarif index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for category_tarif in category_tarifs %}
+            <tr>
+                <td>{{ category_tarif.id }}</td>
+                <td>{{ category_tarif.nom }}</td>
+                <td>
+                    <a href="{{ path('category_tarif_show', {'id': category_tarif.id}) }}">show</a>
+                    <a href="{{ path('category_tarif_edit', {'id': category_tarif.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('category_tarif_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Catégories des jeux VR - Le Complexe{% endblock %}
+
+{% block body %}
+<main>
+    <div class="project-bg bg-danger mt-5">
+        <div class="text-center pt-5 pb-5 articles-about">
+            {% for jeu in jeux %}
+            <a href="{{ url('jeuVR',{id:jeu.category.id}) }}" class="mt-5 text-white">{{ jeu.category.nom }}</a>
+            {% endfor %}
+        </div>   
+    </div>
+    
+</main>
+{% endblock %}

@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New Virtual{% endblock %}
+
+{% block body %}
+    <h1>Create new Virtual</h1>
+
+    {{ include('virtual/_form.html.twig') }}
+
+    <a href="{{ path('virtual_index') }}">back to list</a>
+{% endblock %}

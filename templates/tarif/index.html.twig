@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Tarif index{% endblock %}
+
+{% block body %}
+    <h1>Tarif index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>Description</th>
+                <th>Prix1</th>
+                <th>Prix2</th>
+                <th>Prix3</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tarif in tarifs %}
+            <tr>
+                <td>{{ tarif.id }}</td>
+                <td>{{ tarif.nom }}</td>
+                <td>{{ tarif.description }}</td>
+                <td>{{ tarif.prix1 }}</td>
+                <td>{{ tarif.prix2 }}</td>
+                <td>{{ tarif.prix3 }}</td>
+                <td>
+                    <a href="{{ path('tarif_show', {'id': tarif.id}) }}">show</a>
+                    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="7">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('tarif_new') }}">Create new</a>
+{% endblock %}

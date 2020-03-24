@@ -55,3 +55,6 @@ strong{
 .vrpage{
 	font-family: 'Aldrich', sans-serif;
 }
+.vrpage img{
+	border-radius: 30px;
+}

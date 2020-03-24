@@ -79,8 +79,20 @@ class VirtualController extends AbstractController
      */
     public function show(Request $request, Virtual $virtual): Response
     {
+        $contact = new ContactForm;
+        $form = $this->createForm(ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('portfolio/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact
+            ]);
+        }
+        
         return $this->render('virtual/show.html.twig', [
             'virtual' => $virtual,
+            'form' => $form->createView()
         ]);
     }
 

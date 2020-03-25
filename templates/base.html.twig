@@ -24,7 +24,7 @@
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <a class="navbar-brand" href="#">Le Complexe</a>
+            <a class="navbar-brand" href="{{path('homepage')}}">Le Complexe</a>
             <button class="navbar-toggler collapsed" onclick="dynamicNav()" type="button" data-toggle="collapse"
                 data-target="#NavBarHamburger" aria-controls="NavBarHamburger" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -33,12 +33,12 @@
 
             <div class="navbar-collapse collapse" id="NavBarHamburger">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" onclick="dynamicNav()" href="{{path('homepage')}}">Accueil <span
+                    {# <li class="nav-item active">
+                        <a class="nav-link" onclick="dynamicNav()" href=>Accueil <span
                                 class="sr-only">(current)</span></a>
-                    </li>
+                    </li> #}
                     <li class="nav-item">
-                        <a class="nav-link" onclick="dynamicNav()" href="{{path('restaurant')}}">Restaurant<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" onclick="dynamicNav()" href="{{path('restaurant')}}"><img class="text- src="img/burger.svg" height="30px" width="30px">Restaurant<span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" onclick="dynamicNav()" href="{{path('lasergame')}}">Laser Game<span class="sr-only">(current)</span></a>

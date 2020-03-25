@@ -3,12 +3,12 @@
 {% block title %} - Le Complexe{% endblock %}
 
 {% block body %}
-<main>
+<main class="bg-primary">
     <div class="mt-5">
         <h3 class="text-white text-center">Catégories des jeux VR</h3>
         <div class="text-center py-3 articles-about">
             {% for jeu in jeux %}
-            <a href="{{ url('categoryVR',{id:jeu.category.id}) }}" class="text-white">{{ jeu.category.nom }}</a>
+            <a href="{{ url('categoryVR',{id:jeu.category.id}) }}" class=" btn btn-outline-secondary text-white">{{ jeu.category.nom }}</a>
             {% endfor %}
         </div>   
     </div>

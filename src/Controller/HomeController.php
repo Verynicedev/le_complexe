@@ -179,7 +179,7 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/realitevirtuelle/category", name="allcategorytarif")
+     * @Route("/lasergame/category", name="allcategorytarif")
      */
     public function showAllCategoryTarif(TarifRepository $repository, Request $request)
     {

@@ -3,7 +3,6 @@
 namespace App\Controller;
 
 use App\Entity\Virtual;
-use App\Entity\TagVirtual;
 use App\Entity\ContactForm;
 use App\Form\ContactFormType;
 use App\Entity\CategoryVirtual;

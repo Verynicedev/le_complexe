@@ -45,21 +45,6 @@ class VirtualRepository extends ServiceEntityRepository
         $query = $qb->getQuery();
         return $query->getResult();
     }
-
-    public function findOneWithJoinByCategory(CategoryVirtual $category){
-        $qb= $this->createQueryBuilder('v');
-        $qb ->orderBy('v.nom','DESC')
-            ->join('v.category','c')
-            ->addSelect('c')
-            ->leftJoin('v.tag','t')
-            ->addSelect('t')
-            ->andWhere('c = ?1')
-            ->SetParameter(1, $category)
-            ;
-        $query = $qb->getQuery();
-        return $query->getResult();
-    }
-
     // /**
     //  * @return Virtual[] Returns an array of Virtual objects
     //  */

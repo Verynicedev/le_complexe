@@ -7,6 +7,7 @@ use App\Entity\ContactForm;
 use App\Form\ContactFormType;
 use App\Entity\CategoryVirtual;
 use App\Controller\HomeController;
+use App\Repository\TarifRepository;
 use App\Repository\VirtualRepository;
 use App\Repository\CategoryVirtualRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -59,28 +60,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-    /**
-     * @Route("/lasergame", name="lasergame")
-     */
-    public function lasergame(Request $request)
-    {
-
-        $contact = new ContactForm;
-        $form = $this->createForm(ContactFormType::class, $contact);
-
-        $form->handleRequest($request);
-        if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('home/vue.html.twig',  [
-                'form' => $form->createView(),
-                'contact' => $contact
-            ]);
-
-        }
-        return $this->render('lasergame/lasergame.html.twig', [
-            'form' => $form->createView()
-        ]);
-    }
-
+    
     /**
      * @Route("/realitevirtuelle", name="realitevirtuelle")
      */
@@ -103,7 +83,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/realitevirtuelle/category", name="allcategoryVR")
      */
     public function showAllCategoryVirtual(VirtualRepository $repository, Request $request)
@@ -152,7 +132,7 @@ class HomeController extends AbstractController
         ]);
     }
 
-     /**
+    /**
      * @Route("/realitevirtuelle/category/virtual/{id<\d+>}", name="jeuVR")
      */
     public function showVirtual(Virtual $virtual, VirtualRepository $repository, Request $request)
@@ -172,6 +152,52 @@ class HomeController extends AbstractController
         return $this->render('realitevirtuelle/vueVirtual.html.twig', [
             'form' => $form->createView(),
             'jeu' => $virtual
+
+        ]);
+    }
+    
+    /**
+     * @Route("/lasergame", name="lasergame")
+     */
+    public function lasergame(Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm(ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact
+            ]);
+
+        }
+        return $this->render('lasergame/lasergame.html.twig', [
+            'form' => $form->createView()
+        ]);
+    }
+
+    /**
+     * @Route("/realitevirtuelle/category", name="allcategorytarif")
+     */
+    public function showAllCategoryTarif(TarifRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('lasergame/vueAllCategoryTarif.html.twig', [
+            'form' => $form->createView(),
+            'tarifs' => $repository->findBy([],['id'=>'DESC'])
 
         ]);
     }

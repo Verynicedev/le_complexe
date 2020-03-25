@@ -53,11 +53,10 @@ strong{
 	margin-left: -1em;
 }
 
-.vrpage{
-	font-family: 'Aldrich', sans-serif;
-}
 
-  /* CSS RESTAURANT */
+/* ////////////// */
+/* CSS RESTAURANT */
+/* ////////////// */
   
 #typo-resto {
 	font-family: 'Roboto Condensed', sans-serif;
@@ -108,20 +107,27 @@ strong{
 	background: rgba(0, 0, 0, 0.7) ;
 }
 
+/* //////////////////// */
+/* CSS REALITEVIRTUELLE */
+/* //////////////////// */
 
-
+.vrpage{
+	font-family: 'Aldrich', sans-serif;
+}
 
 .vrpage article{
 	/* background-color:rgba(206, 212, 218, 0.2); */
 	border-radius: 5px;
 }
+
 .vrpage p{
 	font-size: 1.1em;
 }
 
 .vrpage .parent {
 	display: flex; /* contexte sur le parent */
-  }
+}
+
  .vrpage .enfant {
 	margin: auto; /* eh oui, tout bêtement */
   }

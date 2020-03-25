@@ -104,7 +104,7 @@ class PortfolioController extends AbstractController
      /**
      * @Route("/realitevirtuelle/category", name="allcategoryVR")
      */
-    public function showAllCategoryVirtual(VirtualRepository $repository, Request $request)
+    public function showAllCategoryVirtual(CategoryVirtualRepository $repository, Request $request)
     {
 
         $contact = new ContactForm;
@@ -120,7 +120,7 @@ class PortfolioController extends AbstractController
         }
         return $this->render('realitevirtuelle/vueAllCategoryVirtual.html.twig', [
             'form' => $form->createView(),
-            'jeux' => $repository->findBy([],['id'=>'DESC'])
+            'categories' => $repository->findBy([],['id'=>'DESC'])
 
         ]);
     }

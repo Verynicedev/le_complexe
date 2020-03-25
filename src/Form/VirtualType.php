@@ -38,6 +38,8 @@ class VirtualType extends AbstractType
                             ->orderBy('t.nom','ASC');
                 },
                 ])
+            ->add('description')
+            ->add('image')
         ;
     }
 

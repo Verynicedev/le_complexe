@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use App\Entity\Virtual;
 use App\Entity\ContactForm;
+use App\Entity\CategoryTarif;
 use App\Form\ContactFormType;
 use App\Entity\CategoryVirtual;
 use App\Controller\HomeController;
 use App\Repository\TarifRepository;
 use App\Repository\VirtualRepository;
+use App\Repository\CategoryTarifRepository;
 use App\Repository\CategoryVirtualRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
@@ -86,7 +88,7 @@ class HomeController extends AbstractController
     /**
      * @Route("/realitevirtuelle/category", name="allcategoryVR")
      */
-    public function showAllCategoryVirtual(VirtualRepository $repository, Request $request)
+    public function showAllCategoryVirtual(CategoryVirtualRepository $repository, Request $request)
     {
 
         $contact = new ContactForm;
@@ -102,7 +104,7 @@ class HomeController extends AbstractController
         }
         return $this->render('realitevirtuelle/vueAllCategoryVirtual.html.twig', [
             'form' => $form->createView(),
-            'jeux' => $repository->findBy([],['id'=>'DESC'])
+            'categories' => $repository->findBy([],['id'=>'DESC'])
 
         ]);
     }
@@ -179,9 +181,9 @@ class HomeController extends AbstractController
     }
 
     /**
-     * @Route("/realitevirtuelle/category", name="allcategorytarif")
+     * @Route("/lasergame/category", name="allcategorytarif")
      */
-    public function showAllCategoryTarif(TarifRepository $repository, Request $request)
+    public function showAllCategoryTarif(CategoryTarifRepository $repository, Request $request)
     {
 
         $contact = new ContactForm;
@@ -197,7 +199,32 @@ class HomeController extends AbstractController
         }
         return $this->render('lasergame/vueAllCategoryTarif.html.twig', [
             'form' => $form->createView(),
-            'tarifs' => $repository->findBy([],['id'=>'DESC'])
+            'categories' => $repository->findBy([],['id'=>'ASC'])
+
+        ]);
+    }
+
+        /**
+     * @Route("/lasergame/category/{id<\d+>}", name="categorytarif")
+     */
+    public function showCategoryTarif(CategoryTarif $category, TarifRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('lasergame/vueCategoryTarif.html.twig', [
+            'form' => $form->createView(),
+            'category' => $category,
+            'tarifs' => $repository->findAllWithJoinByCategory($category)
 
         ]);
     }

@@ -3,8 +3,9 @@
 namespace App\Repository;
 
 use App\Entity\Tarif;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use App\Entity\CategoryTarif;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method Tarif|null find($id, $lockMode = null, $lockVersion = null)
@@ -18,7 +19,17 @@ class TarifRepository extends ServiceEntityRepository
     {
         parent::__construct($registry, Tarif::class);
     }
-
+    public function findAllWithJoinByCategory(CategoryTarif $category){
+        $qb= $this->createQueryBuilder('v');
+        $qb ->orderBy('v.nom','DESC')
+            ->join('v.category','c')
+            ->addSelect('c')
+            ->andWhere('c = ?1')
+            ->SetParameter(1, $category)
+            ;
+        $query = $qb->getQuery();
+        return $query->getResult();
+    }
     // /**
     //  * @return Tarif[] Returns an array of Tarif objects
     //  */

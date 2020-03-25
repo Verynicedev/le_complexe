@@ -52,15 +52,13 @@
                 <i class="fas fa-times float-right mr-3 iconb text-danger d-lg-none" onclick="dynamicNav()"></i>
             </div>
         </nav>
-        <div class="project-bg">
         {% include 'partials/header.html.twig' %}
         
         {% block body %}{% endblock %}
 
-        {% include 'partials/footer.html.twig' %}
+        {% include 'partials/footerRestau.html.twig' %}
         
         <script src="/js/script.js"></script>
         {% block javascripts %}{% endblock %}
-        </div>
     </body>        
 </html>

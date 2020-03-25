@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ jeu.nom }} - VR{% endblock %}
+
+{% block body %}
+<main>
+    <div class="row col-12 mx-auto text-center text-white">
+        <h1 class=" text-center text-white">ici nom category</h1>
+        <div class="col-12">
+            <h3 class="text-white">{{ jeu.nom }}</h3>
+            <div class="col-12">
+                <img src="{{ asset(jeu.image) }}" alt="{{ jeu.nom }}" width="100">
+            </div>
+            <div class="mt-5">
+                <span>{{ jeu.description }}</span>
+            </div>
+        </div>
+        <a href="">back to list</a>
+    </div>
+</main>
+
+
+    
+
+
+
+
+
+
+{% endblock %}

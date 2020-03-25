@@ -17,8 +17,9 @@ html {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	/* height:80vh; */
+	/* height:180vh; */
 	margin: auto;
+	padding-top:70px;
 }
 
 #about {

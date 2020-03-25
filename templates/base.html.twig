@@ -51,6 +51,7 @@
                 <i class="fas fa-times float-right mr-3 iconb text-danger d-lg-none" onclick="dynamicNav()"></i>
             </div>
         </nav>
+        <div class="project-bg container-fluid">
         {% include 'partials/header.html.twig' %}
         
         {% block body %}{% endblock %}
@@ -59,6 +60,6 @@
         
         <script src="/js/script.js"></script>
         {% block javascripts %}{% endblock %}
-
+        </div>
     </body>        
 </html>

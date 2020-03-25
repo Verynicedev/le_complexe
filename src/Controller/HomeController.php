@@ -6,16 +6,18 @@ use App\Entity\Virtual;
 use App\Entity\ContactForm;
 use App\Form\ContactFormType;
 use App\Entity\CategoryVirtual;
+use App\Controller\HomeController;
 use App\Repository\VirtualRepository;
 use App\Repository\CategoryVirtualRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class PortfolioController extends AbstractController
+
+class HomeController extends AbstractController
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/home", name="homepage1")
      */
     public function home(Request $request)
     {
@@ -24,13 +26,13 @@ class PortfolioController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('portfolio/vue.html.twig',  [
+            return $this->render('home/vue.html.twig',  [
                 'form' => $form->createView(),
                 'contact' => $contact
             ]);
         }
 
-        return $this->render('portfolio/homepage.html.twig', [
+        return $this->render('home/homepage.html.twig', [
             'form' => $form->createView()
         ]);
     }
@@ -46,7 +48,7 @@ class PortfolioController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('portfolio/vue.html.twig',  [
+            return $this->render('home/vue.html.twig',  [
                 'form' => $form->createView(),
                 'contact' => $contact
             ]);
@@ -68,7 +70,7 @@ class PortfolioController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('portfolio/vue.html.twig',  [
+            return $this->render('home/vue.html.twig',  [
                 'form' => $form->createView(),
                 'contact' => $contact
             ]);
@@ -90,7 +92,7 @@ class PortfolioController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
-            return $this->render('portfolio/vue.html.twig',  [
+            return $this->render('home/vue.html.twig',  [
                 'form' => $form->createView(),
                 'contact' => $contact
             ]);

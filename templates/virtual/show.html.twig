@@ -1,7 +1,6 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Virtual{% endblock %}
-
 {% block body %}
     <h1>Virtual</h1>
 
@@ -14,6 +13,10 @@
             <tr>
                 <th>Nom</th>
                 <td>{{ virtual.nom }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <img src="{{ virtual.image }}" alt="{{ virtual.nom }}">
             </tr>
         </tbody>
     </table>

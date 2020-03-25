@@ -1,15 +1,13 @@
 <!-- Contact -->
-<div id="contact" class="pt-5 pb-5 w-50">
-    <h2 class="text-center mb-3">Contactez-nous</h2>
-    
+    <h2 class="text-center text-light mb-2">Contactez-nous</h2>
+    <hr>
     {{ form_start(form) }}
-    <div class="border rounded shadow pb-2 pt-2 col-12 col-sm-10 col-md-7 col-lg-6 col-xl-3 m-auto text-center">
+    <div class="border rounded shadow bg-light pb-2 pt-2 col-12 col-sm-10 col-md-10 col-lg-6 col-xl-8 m-auto text-center">
         {{ form_row(form.name) }}
         {{ form_row(form.email) }}
         {{ form_row(form.subject) }}
         {{ form_row(form.message) }}
-        <input type="submit" name="submit" value="Envoyez" class="btn btn-success">
+        <input type="submit" name="submit" value="Envoyez" class="btn btn-success rounded">
     </div>
     {{ form_end(form) }}
-</div>
 <!-- End Contact -->

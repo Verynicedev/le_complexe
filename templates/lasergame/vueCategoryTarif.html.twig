@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+{% block title %}Catégories des jeux VR - Le Complexe{% endblock %}
+
+{% block body %}
+<main>
+    <h2 class="mt-5 text-center text-white"> {{ category.nom }} </h2>
+    <div class="row">
+        {% for tarif in tarifs %}
+        {% if tarif.category.id == 6 %} 
+            <div class="col-4 text-center mt-5 mx-auto">
+                <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
+                    <h3 class="card-header">{{ tarif.nom }}</h3>
+                    <div class="card-body">
+                        <p> {{tarif.description}} </p>
+                        <h5 class="card-title"> Par personne : {{ tarif.prix1 }} €</h5>
+                    </div>
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+
+            {% elseif tarif.category.id == 5 %}
+            <div class="col-4 text-center mt-5 mx-auto">
+                <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
+                    <h3 class="card-header">{{ tarif.nom }}</h3>
+                    <div class="card-body">
+                        <h5 class="card-title"> 1 partie : {{ tarif.prix1 }} €</h5>
+                        <h5 class="card-title"> 2 parties : {{ tarif.prix2 }} €</h5>
+                        <h5 class="card-title"> 3 parties : {{ tarif.prix3 }} €</h5>
+                    </div>
+                    <div class="card-body">
+                    </div>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <a class="text-white" href="{{ path('allcategorytarif') }}">Retour à la liste des catégories</a>
+        </div>
+    </div>
+
+</main>
+
+{% endblock %}

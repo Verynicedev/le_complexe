@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New CategoryTarif{% endblock %}
+
+{% block body %}
+    <h1>Create new CategoryTarif</h1>
+
+    {{ include('category_tarif/_form.html.twig') }}
+
+    <a href="{{ path('category_tarif_index') }}">back to list</a>
+{% endblock %}

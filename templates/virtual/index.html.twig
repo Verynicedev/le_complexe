@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Virtual index{% endblock %}
+
+{% block body %}
+    <h1>Virtual index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nom</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for virtual in virtuals %}
+            <tr>
+                <td>{{ virtual.id }}</td>
+                <td>{{ virtual.nom }}</td>
+                <td>
+                    <a href="{{ path('virtual_show', {'id': virtual.id}) }}">show</a>
+                    <a href="{{ path('virtual_edit', {'id': virtual.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('virtual_new') }}">Create new</a>
+{% endblock %}

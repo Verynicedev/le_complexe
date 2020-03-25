@@ -13,12 +13,13 @@ html {
 
 .project-bg {
     /* Photo by Ron Whitaker on Unsplash */
-	background-image: url("../img/9b9b701e37114ff4e92d85d28320ed60.jpg");
+	background-image: url("../img/ron-whitaker.jpg");
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	/* height:80vh; */
+	/* height:180vh; */
 	margin: auto;
+	padding-top:70px;
 }
 
 #about {
@@ -51,3 +52,77 @@ strong{
 .correctionMargin {
 	margin-left: -1em;
 }
+
+.vrpage{
+	font-family: 'Aldrich', sans-serif;
+}
+
+  /* CSS RESTAURANT */
+  
+#typo-resto {
+	font-family: 'Roboto Condensed', sans-serif;
+  }
+.maindiv-resto{
+	margin-top: 68px;
+}
+
+.header-resto{
+	background-image: url("../img/restohead.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	height:60vh;
+	margin: auto;
+}
+.sdw{
+	text-shadow: 2px 2px 3px black; 
+}
+.card, .bibo{
+	background: rgba(255, 183, 0, 0.5);
+}
+
+.bg-title-resto{
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5) ;
+	text-shadow: 5px 5px 6px black; 
+}
+.footer-resto{
+	background-image: url("../img/restohead.jpg");
+	/* background: rgba(0, 0, 0, 0.7) ; */
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	margin: auto;
+}
+.footer-filtre-resto{
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7) ;
+	text-shadow: 5px 5px 6px black;
+	padding: 30px !important; 
+	margin: 0 !important; 
+}
+.arrow-filtre-resto{
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7) ;
+}
+
+
+
+
+.vrpage article{
+	/* background-color:rgba(206, 212, 218, 0.2); */
+	border-radius: 5px;
+}
+.vrpage p{
+	font-size: 1.1em;
+}
+
+.vrpage .parent {
+	display: flex; /* contexte sur le parent */
+  }
+ .vrpage .enfant {
+	margin: auto; /* eh oui, tout bêtement */
+  }
+

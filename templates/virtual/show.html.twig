@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Virtual{% endblock %}
+{% block body %}
+    <h1>Virtual</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ virtual.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ virtual.nom }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <img src="{{ virtual.image }}" alt="{{ virtual.nom }}">
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('virtual_index') }}">back to list</a>
+
+    <a href="{{ path('virtual_edit', {'id': virtual.id}) }}">edit</a>
+
+    {{ include('virtual/_delete_form.html.twig') }}
+{% endblock %}

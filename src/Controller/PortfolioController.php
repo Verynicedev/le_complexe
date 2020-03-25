@@ -2,8 +2,12 @@
 
 namespace App\Controller;
 
+use App\Entity\Virtual;
 use App\Entity\ContactForm;
 use App\Form\ContactFormType;
+use App\Entity\CategoryVirtual;
+use App\Repository\VirtualRepository;
+use App\Repository\CategoryVirtualRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -94,6 +98,79 @@ class PortfolioController extends AbstractController
         }
         return $this->render('realitevirtuelle/realitevirtuelle.html.twig', [
             'form' => $form->createView()
+        ]);
+    }
+
+     /**
+     * @Route("/realitevirtuelle/category", name="allcategoryVR")
+     */
+    public function showAllCategoryVirtual(CategoryVirtualRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('realitevirtuelle/vueAllCategoryVirtual.html.twig', [
+            'form' => $form->createView(),
+            'categories' => $repository->findBy([],['id'=>'DESC'])
+
+        ]);
+    }
+
+    /**
+     * @Route("/realitevirtuelle/category/{id<\d+>}", name="categoryVR")
+     */
+    public function showCategoryVirtual(CategoryVirtual $category, VirtualRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('realitevirtuelle/vueCategoryVirtual.html.twig', [
+            'form' => $form->createView(),
+            'category' => $category,
+            'jeux' => $repository->findAllWithJoinByCategory($category)
+
+        ]);
+    }
+
+     /**
+     * @Route("/realitevirtuelle/category/virtual/{id<\d+>}", name="jeuVR")
+     */
+    public function showVirtual(Virtual $virtual, VirtualRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('realitevirtuelle/vueVirtual.html.twig', [
+            'form' => $form->createView(),
+            'jeu' => $virtual
+
         ]);
     }
 }

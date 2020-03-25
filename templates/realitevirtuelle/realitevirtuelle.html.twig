@@ -3,34 +3,46 @@
 {% block title %}Réalité Virtuelle{% endblock %}
 
 {% block body %}
-<main class="vrpage project-bg mt-5">
+<main class="project-bg vrpage mt-5"> 
+   
         <div class="pt-5 pb-5 articles-about container">
              <h2 class="text-center pt-2 pb-2 mt-2 mb-2 text-light">Réalité Virtuelle</h2>
-            <article class="m-auto pb-1 pt-1 mt-2 mb-2 col-12 row">
-               
-                <img src="/img/Virtual_Reality.jpg" alt="réalité virtuelle" class="col-6 shadow img-fluid">
-                <p class="left text-light col-6">Vous vivrez une expérience hors du commun dans un centre de réalité
-                    virtuelle. Découvrez une atmosphère unique, accueillante et chaleureuse !
-                    Situé à 10min d'Aix-en-Provence, Virtual Arena c’est un ensemble de 4 espaces VR. Vous pouvez venir
-                    seul ou en groupe, le temps de 30min ou d’une soirée. Choisissez entre l’une de nos 3 grandes
-                    formules: arcade, jeux de tirs, ou Escape Game. En fonction de la formule choisie, vous basculerez
-                    sur l’un de nos différents espaces de jeu.
-                </p>
-                <br>
+                <div class="parent">
+                    <article class="m-auto pb-1 pt-1 mt-2 mb-2 col-12 row">
+                        <div class=" col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto pt-3 pt-sm-3 pt-md-3 ">
+                            <img src="/img/Virtual_Reality.jpg" alt="réalité virtuelle" class="img-fluid rounded ">
+                        </div>   
+                        <div class="enfant col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                            <p class="text-center text-light pt-5 pt-sm-5 pt-md-5">Vous vivrez une expérience hors du commun dans un centre de réalité
+                            virtuelle. Découvrez une atmosphère unique, accueillante et chaleureuse !
+                            Situé à 10min d'Aix-en-Provence, Virtual Arena c’est un ensemble de 4 espaces VR. Vous pouvez venir
+                            seul ou en groupe, le temps de 30min ou d’une soirée. Choisissez entre l’une de nos 3 grandes
+                            formules: arcade, jeux de tirs, ou Escape Game. En fonction de la formule choisie, vous basculerez
+                            sur l’un de nos différents espaces de jeu.
+                            </p>
+                            <br>
+                    </div>
+                </div>
+                
             </article>
         </div>
         <div class="pt-5 pb-5 articles-about container">
             <h2 class="text-center pt-2 pb-2 mt-2 mb-2 text-light">Espace VR</h2>
+            <div class="parent">
             <article class="m-auto pb-1 pt-1 mt-2 mb-2 col-12 row">
-                
-                <p class="left text-light col-6">Dans notre espace VR vous serez en totale immersion dans un monde virtuelle grâce a nos casque VR et notre espace adapté. Un espace de ...m² pensé pour accueillir un groupe de 4 personnes en simultanés. 
-                </p>
-                <br>
-                <img src="/img/sallevr.jpg" alt="salle réalité virtuelle" class="col-6 shadow">
+                <div class="enfant col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <p class=" text-center text-light  pt-5 pt-sm-5 pt-md-5">Dans notre espace VR vous serez en totale immersion dans un monde virtuelle grâce a nos casque VR et notre espace adapté. Un espace de ...m² pensé pour accueillir un groupe de 4 personnes en simultanés. 
+                    </p>
+                    <br>
+                </div>
+                <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mx-auto pt-3 pt-sm-3 pt-md-3 ">
+                    <img src="/img/sallevr.jpg" alt="salle réalité virtuelle" class="img-fluid rounded">
+                </div>
+            </div>
             </article>
         </div>
         <div class="text-center">
-            <a href="{{ path('categoryVR') }}" class="btn btn-outline-info"> Nos jeux VR <i class="far fa-arrow-right"></i></a>
+            <a href="{{ path('allcategoryVR') }}" class="btn btn-outline-secondary mb-5"> Nos jeux VR <i class="fas fa-arrow-right"></i></a>
         </div>
     </div>
 </main>

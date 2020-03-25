@@ -13,12 +13,13 @@ html {
 
 .project-bg {
     /* Photo by Ron Whitaker on Unsplash */
-	background-image: url("../img/bgwood.jpg");
+	background-image: url("../img/fondsombre.jpg");
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	/* height:80vh; */
+	/* height:180vh; */
 	margin: auto;
+	padding-top:70px;
 }
 
 #about {
@@ -55,8 +56,6 @@ strong{
 .vrpage{
 	font-family: 'Aldrich', sans-serif;
 }
-
-
 
   /* CSS RESTAURANT */
   
@@ -110,4 +109,20 @@ strong{
 }
 
 
+
+
+.vrpage article{
+	/* background-color:rgba(206, 212, 218, 0.2); */
+	border-radius: 5px;
+}
+.vrpage p{
+	font-size: 1.1em;
+}
+
+.vrpage .parent {
+	display: flex; /* contexte sur le parent */
+  }
+ .vrpage .enfant {
+	margin: auto; /* eh oui, tout bêtement */
+  }
 

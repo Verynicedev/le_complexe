@@ -3,7 +3,7 @@
 
 {% block body %}
 <main>
-    <h2 class="text-center text-white"> {{ category.nom }} </h2>
+    <h2 class="mt-5 text-center text-white"> {{ category.nom }} </h2>
     <div class="row">
         {% for jeu in jeux %}
             <div class="col-4 text-center mt-5 mx-auto">
@@ -17,6 +17,7 @@
                     </div>
                 </div>
             </div>
+            <a class="text-white" href="{{ path('allcategoryVR') }}">Retour à la liste des catégories</a>
 
         {% endfor %}
     </div>

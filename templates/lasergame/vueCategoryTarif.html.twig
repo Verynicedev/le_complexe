@@ -1,8 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'lasergame/base.html.twig' %}
 {% block title %}Catégories des jeux VR - Le Complexe{% endblock %}
 
 {% block body %}
-<main>
+<main class="bg-primary">
+<div class="header-laser d-flex align-items-center justify-content-center">
+            <div class=" mx-auto w-100 bg-title-laser text-center">
+                <h1 class="lasertitle text-white p-3">Laser Game Arena</h1>
+                <h3 class="lasersubtitle text-danger"></h3>
+                <p class="lasersubtitle h3 text-white p-3 font-weight-light">En famille ou entre amis</p>
+            </div>
+        </div>
     <h2 class="mt-5 text-center text-white"> {{ category.nom }} </h2>
     <div class="row">
         {% for tarif in tarifs %}

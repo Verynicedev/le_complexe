@@ -260,3 +260,20 @@ strong{
 	margin: 0 !important; 
 }
 
+.catvr{
+	background-image: url("../img/headervr.jpg");
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 350px;
+	border: solid  rgba(37, 52, 163, 0.7) 2px;
+}
+
+.titlecatvr{
+	background-color: rgba(37, 52, 163, 0.5);
+}
+/* 
+.divcatvr{
+	height: 700px;
+} */
+

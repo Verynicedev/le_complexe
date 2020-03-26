@@ -170,3 +170,16 @@ strong{
 	margin: 0 !important; 
 }
 
+.catvr{
+	background-image: url("../img/headervr.jpg");
+	background-position: center;
+	background-size: cover;
+	/* background-attachment: fixed; */
+	margin: auto;
+	height: 250px;
+}
+
+.divcatvr{
+	height: 700px;
+}
+

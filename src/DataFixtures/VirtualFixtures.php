@@ -17,7 +17,7 @@ class VirtualFixtures extends Fixture
                 ->setCategory($this->getReference(CategoryVirtualFixtures::CATEGORY_2))
                 ->addTag($this->getReference(TagVirtualFixtures::TAG_1))
                 ->setImage('img/ron-whitaker.jpg')
-                ->setDescription('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cupiditate eius iste reprehenderit accusamus omnis ipsum, quos doloremque quis facilis, laudantium ipsam saepe reiciendis quas cum? Ut nesciunt porro nostrum! Voluptatem voluptatibus veritatis aliquam ex quasi.')
+                ->setDescription('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cupiditate eius iste reprehenderit accusamus omnis ipsum, quos doloremque quis facilis, laudantium ipsam saepe reiciendis quas cum? Ut nesciunt porro nostrum!')
         ;
         $manager->persist($virtual);
         $virtual2 = new Virtual();
@@ -25,7 +25,7 @@ class VirtualFixtures extends Fixture
                 ->setCategory($this->getReference(CategoryVirtualFixtures::CATEGORY_1))
                 ->addTag($this->getReference(TagVirtualFixtures::TAG_2))
                 ->setImage('img/code.png')
-                ->setDescription('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cupiditate eius iste reprehenderit accusamus omnis ipsum, quos doloremque quis facilis, laudantium ipsam saepe reiciendis quas cum? Ut nesciunt porro nostrum! Voluptatem voluptatibus veritatis aliquam ex quasi.')
+                ->setDescription('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Similique cupiditate eius iste reprehenderit accusamus omnis ipsum, quos doloremque quis facilis, laudantium ipsam saepe reiciendis quas cum? Ut nesciunt porro nostrum!')
         ;
         $manager->persist($virtual2);
 

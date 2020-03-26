@@ -13,7 +13,9 @@
     <h2 class="mt-5 text-center text-white"> {{ category.nom }} </h2>
     <div class="row">
         {% for tarif in tarifs %}
-        {% if tarif.category.id == 4 %} 
+
+        <!-- nos formules (changer l'id) -->
+        {% if tarif.category.id == 8 %} 
             <div class="col-4 text-center mt-5 mx-auto">
                 <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
                     <h3 class="card-header">{{ tarif.nom }}</h3>
@@ -26,7 +28,8 @@
                 </div>
             </div>
 
-            {% elseif tarif.category.id == 3 %}
+            <!-- nos tarifs (changer l'id) -->
+            {% elseif tarif.category.id == 7 %}
             <div class="col-4 text-center mt-5 mx-auto">
                 <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
                     <h3 class="card-header">{{ tarif.nom }}</h3>

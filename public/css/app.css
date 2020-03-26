@@ -13,7 +13,7 @@ html {
 
 .project-bg {
     /* Photo by Ron Whitaker on Unsplash */
-	background-image: url("../img/ron-whitaker.jpg");
+	/* background-image: url("../img/fondsombre.jpg"); */
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
@@ -53,9 +53,7 @@ strong{
 	margin-left: -1em;
 }
 
-.vrpage{
-	font-family: 'Aldrich', sans-serif;
-}
+
 
   /* CSS RESTAURANT */
   
@@ -108,11 +106,40 @@ strong{
 	background: rgba(0, 0, 0, 0.7) ;
 }
 
+/* CSS REALITE VIRTUELLE */
 
+#typo-vr{
+	font-family: 'Aldrich', sans-serif;
+}
+.header-vr{
+	background-image: url("../img/headervr.jpg");
+	opacity: 0.8;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	height:60vh;
+	margin: auto;
+}
+.vrtitle{
+	font-size: 80px;
+}
+.vrsubtitle{
+	font-size: 30px;
+}
 
+.bg-title-vr{
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5) ;
+	text-shadow: 5px 5px 6px black; 
+}
+
+.card-vr{
+	background-color: rgba(37, 52, 163, 0.5);
+	border-radius: 5px;
+}
 
 .vrpage article{
-	/* background-color:rgba(206, 212, 218, 0.2); */
 	border-radius: 5px;
 }
 .vrpage p{
@@ -120,9 +147,26 @@ strong{
 }
 
 .vrpage .parent {
-	display: flex; /* contexte sur le parent */
+	display: flex;
   }
  .vrpage .enfant {
-	margin: auto; /* eh oui, tout bêtement */
+	margin: auto;
   }
+
+  .footer-vr{
+	background-image: url("../img/headervr.jpg");
+	/* background: rgba(0, 0, 0, 0.7) ; */
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	margin: auto;
+}
+.footer-filtre-vr{
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7) ;
+	text-shadow: 5px 5px 6px black;
+	padding: 30px !important; 
+	margin: 0 !important; 
+}
 

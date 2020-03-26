@@ -1,49 +1,63 @@
-{% extends 'base.html.twig' %}
+{% extends 'realitevirtuelle/base.html.twig' %}
 
-{% block title %}Réalité Virtuelle{% endblock %}
+{% block title %}Réalité virtuelle{% endblock %}
 
 {% block body %}
-<main class="project-bg vrpage mt-5"> 
-   
-        <div class="pt-5 pb-5 articles-about container">
-             <h2 class="text-center pt-2 pb-2 mt-2 mb-2 text-light">Réalité Virtuelle</h2>
-                <div class="parent">
-                    <article class="m-auto pb-1 pt-1 mt-2 mb-2 col-12 row">
-                        <div class=" col-12 col-sm-12 col-md-8 col-lg-6 col-xl-6 mx-auto pt-3 pt-sm-3 pt-md-3 ">
-                            <img src="/img/Virtual_Reality.jpg" alt="réalité virtuelle" class="img-fluid rounded ">
-                        </div>   
-                        <div class="enfant col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                            <p class="text-center text-light pt-5 pt-sm-5 pt-md-5">Vous vivrez une expérience hors du commun dans un centre de réalité
-                            virtuelle. Découvrez une atmosphère unique, accueillante et chaleureuse !
-                            Situé à 10min d'Aix-en-Provence, Virtual Arena c’est un ensemble de 4 espaces VR. Vous pouvez venir
-                            seul ou en groupe, le temps de 30min ou d’une soirée. Choisissez entre l’une de nos 3 grandes
-                            formules: arcade, jeux de tirs, ou Escape Game. En fonction de la formule choisie, vous basculerez
-                            sur l’un de nos différents espaces de jeu.
-                            </p>
-                            <br>
-                    </div>
-                </div>
-                
-            </article>
-        </div>
-        <div class="pt-5 pb-5 articles-about container">
-            <h2 class="text-center pt-2 pb-2 mt-2 mb-2 text-light">Espace VR</h2>
-            <div class="parent">
-            <article class="m-auto pb-1 pt-1 mt-2 mb-2 col-12 row">
-                <div class="enfant col-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
-                    <p class=" text-center text-light  pt-5 pt-sm-5 pt-md-5">Dans notre espace VR vous serez en totale immersion dans un monde virtuelle grâce a nos casque VR et notre espace adapté. Un espace de ...m² pensé pour accueillir un groupe de 4 personnes en simultanés. 
-                    </p>
-                    <br>
-                </div>
-                <div class=" col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 mx-auto pt-3 pt-sm-3 pt-md-3 ">
-                    <img src="/img/sallevr.jpg" alt="salle réalité virtuelle" class="img-fluid rounded">
-                </div>
+<main id="typo-vr">
+    <div class="maindiv-vr sdw bg-primary">
+        <div class="header-vr d-flex align-items-center justify-content-center">
+            <div class=" mx-auto w-100 bg-title-vr">
+                <h1 class="text-white text-center p-3 vrtitle"> Réalité Virtuelle </h1>
+                <p class="text-white text-center p-3 vrsubtitle h3 font-weight-light"> Vivre de nouvelles expériences </p>
             </div>
-            </article>
         </div>
-        <div class="text-center">
-            <a href="{{ path('allcategoryVR') }}" class="btn btn-outline-secondary mb-5"> Nos jeux VR <i class="fas fa-arrow-right"></i></a>
+
+        <div class="body-vr text bg-primary pb-5 container-fluid">
+            <div class="bg-primary  pt-5 row">                                                                              
+                <div class="card-vr text-white mb-3 col-9 mx-auto">
+                    <div class="card-body col-12 ">
+                        <article class="m-auto col-12 row"> 
+                            <div class="col-sm-10 col-md-10 col-lg-6 col-xl-5 mx-auto my-auto">                         
+                                <img src="/img/Virtual_Reality.jpg" alt="réalitévirtuelle" class=" img-fluid rounded border border-primary">
+                            </div>
+                            
+                            <div class="col-sm-10 col-md-10 col-lg-6 col-xl-7 mx-auto">                            
+                                <h4 class="card-title text-center pb-sm-1 pb-md-1 pt-sm-2 pt-md-2">Réalité Virtuelle</h4>
+                                <hr>
+                                <p class="card-text">Vous vivrez une expérience hors du commun dans un centre de réalité
+                                    virtuelle. Découvrez une atmosphère unique, accueillante et chaleureuse !
+                                    Situé à 10min d'Aix-en-Provence, Virtual Arena c’est un ensemble de 4 espaces VR. Vous pouvez venir
+                                    seul ou en groupe, le temps de 30min ou d’une soirée. Choisissez entre l’une de nos 3 grandes
+                                    formules: arcade, jeux de tirs, ou Escape Game. En fonction de la formule choisie, vous basculerez
+                                    sur l’un de nos différents espaces de jeu.
+                                </p>
+                            </div>
+                        </article>
+                    </div>             
+                </div>
+                <div class="bg-primary  pt-5 row">                                                                              
+                    <div class="card-vr text-white mb-3 col-9 mx-auto">
+                        <div class="card-body col-12 ">
+                            <article class="m-auto col-12 row"> 
+                                <div class="col-sm-10 col-md-10 col-lg-6 col-xl-7 mx-auto">                            
+                                    <h4 class="card-title text-center pb-sm-1 pb-md-1 pt-sm-2 pt-md-2">Notre salle VR</h4>
+                                    <hr>
+                                    <p class="card-text">Dans notre espace VR vous serez en totale immersion dans un monde virtuelle grâce a nos casque VR et notre espace adapté. Un espace de ...m² pensé pour accueillir un groupe de 4 personnes en simultanés. 
+                                    </p>
+                                </div>
+                                 <div class="col-sm-10 col-md-10 col-lg-6 col-xl-5 mx-auto my-auto">                         
+                                    <img src="/img/sallevr.jpg" alt="réalitévirtuelle" class=" img-fluid rounded border border-primary">
+                                </div>
+                            </article>
+                        </div>             
+                    </div>
+            </div> 
+
+             <div class="bg-primary text-center col-12 p-5">
+                <a href="{{ path('allcategoryVR') }}" class="btn btn-outline-secondary text-white mr-5 rounded">NOS JEUX VR <i class="fas fa-arrow-right"></i></a>
+            </div>            
         </div>
+
     </div>
 </main>
 {% endblock %}

@@ -141,6 +141,9 @@ strong{
 .lasercard, .bibo2{
 	background: rgba(0, 136, 73, 0.5);
 }
+.bibo3{
+	background: rgba(0, 136, 73, 0.7);
+}
 
 .bg-title-laser{
 	display: block;
@@ -168,6 +171,16 @@ strong{
 	width: 100%;
 	background: rgba(0, 0, 0, 0.7) ;
 }
+
+.catlaser {
+	background-image: url("../img/entree.jpg");
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 350px;
+	border: solid rgba(0, 136, 73, 0.7) 2px;
+}
+
 
 /* //////////////////// */
 /* CSS REALITEVIRTUELLE */

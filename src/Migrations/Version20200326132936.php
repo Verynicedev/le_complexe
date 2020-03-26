@@ -10,7 +10,7 @@ use Doctrine\Migrations\AbstractMigration;
 /**
  * Auto-generated Migration: Please modify to your needs!
  */
-final class Version20200326102041 extends AbstractMigration
+final class Version20200326132936 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -28,6 +28,7 @@ final class Version20200326102041 extends AbstractMigration
         $this->addSql('CREATE TABLE virtual_tag_virtual (virtual_id INT NOT NULL, tag_virtual_id INT NOT NULL, INDEX IDX_CAC1F8C9025E95 (virtual_id), INDEX IDX_CAC1F8CAC19DCC4 (tag_virtual_id), PRIMARY KEY(virtual_id, tag_virtual_id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE tarif (id INT AUTO_INCREMENT NOT NULL, category_id INT NOT NULL, nom VARCHAR(255) NOT NULL, description VARCHAR(255) DEFAULT NULL, prix1 VARCHAR(255) NOT NULL, prix2 VARCHAR(255) DEFAULT NULL, prix3 VARCHAR(255) DEFAULT NULL, INDEX IDX_E7189C912469DE2 (category_id), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('CREATE TABLE tag_virtual (id INT AUTO_INCREMENT NOT NULL, nom VARCHAR(255) NOT NULL, PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
+        $this->addSql('CREATE TABLE user (id INT AUTO_INCREMENT NOT NULL, email VARCHAR(180) NOT NULL, roles JSON NOT NULL, password VARCHAR(255) NOT NULL, UNIQUE INDEX UNIQ_8D93D649E7927C74 (email), PRIMARY KEY(id)) DEFAULT CHARACTER SET utf8mb4 COLLATE `utf8mb4_unicode_ci` ENGINE = InnoDB');
         $this->addSql('ALTER TABLE `virtual` ADD CONSTRAINT FK_30B83DB712469DE2 FOREIGN KEY (category_id) REFERENCES category_virtual (id)');
         $this->addSql('ALTER TABLE virtual_tag_virtual ADD CONSTRAINT FK_CAC1F8C9025E95 FOREIGN KEY (virtual_id) REFERENCES `virtual` (id) ON DELETE CASCADE');
         $this->addSql('ALTER TABLE virtual_tag_virtual ADD CONSTRAINT FK_CAC1F8CAC19DCC4 FOREIGN KEY (tag_virtual_id) REFERENCES tag_virtual (id) ON DELETE CASCADE');
@@ -49,5 +50,6 @@ final class Version20200326102041 extends AbstractMigration
         $this->addSql('DROP TABLE virtual_tag_virtual');
         $this->addSql('DROP TABLE tarif');
         $this->addSql('DROP TABLE tag_virtual');
+        $this->addSql('DROP TABLE user');
     }
 }

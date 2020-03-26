@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/tarif")
+ * @Route("/admin/tarif")
  */
 class TarifController extends AbstractController
 {

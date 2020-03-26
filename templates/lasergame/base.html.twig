@@ -26,7 +26,7 @@
 
     <body>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-            <a class="navbar-brand" href="#">Le Complexe</a>
+            <a class="navbar-brand" href="{{path('homepage')}}">Le Complexe</a>
             <button class="navbar-toggler collapsed" onclick="dynamicNav()" type="button" data-toggle="collapse"
                 data-target="#NavBarHamburger" aria-controls="NavBarHamburger" aria-expanded="false"
                 aria-label="Toggle navigation">
@@ -34,20 +34,60 @@
             </button>
 
             <div class="navbar-collapse collapse" id="NavBarHamburger">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" onclick="dynamicNav()" href="{{path('homepage')}}">Accueil <span
-                                class="sr-only">(current)</span></a>
-                    </li>
+                <ul class="navbar-nav ml-auto">
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin VR</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="dynamicNav()" href="{{path('restaurant')}}">Restaurant<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="{{ path('virtual_index') }}">Liste des menus</a>
+                        <a class="dropdown-item" href="{{ path('category_virtual_index') }}">Liste des catégories</a>
+                        <a class="dropdown-item" href="{{ path('virtual_new') }}">Nouveau menu</a>
+                        <a class="dropdown-item" href="{{ path('category_virtual_new') }}">Nouvelle catégorie</a>
+                        <div class="dropdown-divider"></div>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link" onclick="dynamicNav()" href="{{path('restaurant')}}">Restaurant<span class="sr-only">(current)</span></a>
                     </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin Laser Game</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="dynamicNav()" href="{{path('lasergame')}}">Laser Game<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="{{ path('tarif_index') }}">Liste des tarifs</a>
+                        <a class="dropdown-item" href="{{ path('category_tarif_index') }}">Liste des catégories</a>
+                        <a class="dropdown-item" href="{{ path('tarif_new') }}">Nouveau tarif</a>
+                        <a class="dropdown-item" href="{{ path('category_tarif_new') }}">Nouvelle catégorie</a>
+                        <div class="dropdown-divider"></div>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link" onclick="dynamicNav()" href="{{path('lasergame')}}">Laser Game<span class="sr-only">(current)</span></a>
                     </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Admin Restaurant</a>
+                        <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="dynamicNav()" href="{{path('realitevirtuelle')}}">Réalité Virtuelle<span class="sr-only">(current)</span></a>
+                        <a class="dropdown-item" href="{{ path('virtual_index') }}">Liste des jeux</a>
+                        <a class="dropdown-item" href="{{ path('category_virtual_index') }}">Liste des catégories</a>
+                        <a class="dropdown-item" href="{{ path('virtual_new') }}">Nouveau jeu</a>
+                        <a class="dropdown-item" href="{{ path('category_virtual_new') }}">Nouvelle catégorie</a>
+                        <div class="dropdown-divider"></div>
+                    {% else %}
                     <li class="nav-item">
                         <a class="nav-link" onclick="dynamicNav()" href="{{path('realitevirtuelle')}}">Réalité Virtuelle<span class="sr-only">(current)</span></a>
                     </li>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_SUPER_ADMIN') %}
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="dynamicNav()" href="{{ path('app_logout') }}"><i class="h4 text-danger fas fa-power-off"></i>
+                            <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    {% endif %}
                 </ul>
                 <i class="fas fa-times float-right mr-3 iconb text-danger d-lg-none" onclick="dynamicNav()"></i>
             </div>

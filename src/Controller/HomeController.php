@@ -4,12 +4,15 @@ namespace App\Controller;
 
 use App\Entity\Virtual;
 use App\Entity\ContactForm;
+use App\Entity\CategoryMenu;
 use App\Entity\CategoryTarif;
 use App\Form\ContactFormType;
+
 use App\Entity\CategoryVirtual;
-use App\Controller\HomeController;
+use App\Repository\MenuRepository;
 use App\Repository\TarifRepository;
 use App\Repository\VirtualRepository;
+use App\Repository\CategoryMenuRepository;
 use App\Repository\CategoryTarifRepository;
 use App\Repository\CategoryVirtualRepository;
 use Symfony\Component\HttpFoundation\Request;
@@ -59,6 +62,53 @@ class HomeController extends AbstractController
 
         return $this->render('restaurant/restaurant.html.twig', [
             'form' => $form->createView()
+        ]);
+    }
+    /**
+     * @Route("/restaurant/category", name="allcategoryMenu")
+     */
+    public function showAllCategoryMenu(CategoryMenuRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('restaurant/vueAllCategoryMenu.html.twig', [
+            'form' => $form->createView(),
+            'categories' => $repository->findBy([],['id'=>'DESC'])
+
+        ]);
+    }
+     /**
+     * @Route("/restaurant/category/{id<\d+>}", name="categoryMenu")
+     */
+    public function showCategoryMenu(CategoryMenu $category,MenuRepository $repository, Request $request)
+    {
+
+        $contact = new ContactForm;
+        $form = $this->createForm( ContactFormType::class, $contact);
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            return $this->render('home/vue.html.twig',  [
+                'form' => $form->createView(),
+                'contact' => $contact,
+            ]);
+
+        }
+        return $this->render('restaurant/vueCategoryMenu.html.twig', [
+            'form' => $form->createView(),
+            'category' => $category,
+            'menus' => $repository->findAllWithJoinByCategory($category)
+
         ]);
     }
 
@@ -228,4 +278,5 @@ class HomeController extends AbstractController
 
         ]);
     }
+    
 }

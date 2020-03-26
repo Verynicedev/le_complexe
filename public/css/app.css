@@ -54,8 +54,9 @@ strong{
 }
 
 
-
-  /* CSS RESTAURANT */
+/* ////////////// */
+/* CSS RESTAURANT */
+/* ////////////// */
   
 #typo-resto {
 	font-family: 'Roboto Condensed', sans-serif;
@@ -75,7 +76,7 @@ strong{
 .sdw{
 	text-shadow: 2px 2px 3px black; 
 }
-.card, .bibo{
+.restocard, .bibo{
 	background: rgba(255, 183, 0, 0.5);
 }
 
@@ -106,6 +107,71 @@ strong{
 	background: rgba(0, 0, 0, 0.7) ;
 }
 
+/* ////////////// */
+/* CSS LASERGAME */
+/* ////////////// */
+  
+#typo-laser {
+	font-family: 'Roboto Condensed', sans-serif;
+  }
+.maindiv-laser{
+	margin-top: 68px;
+}
+
+.lasertitle{
+	font-size: 100px;
+}
+
+.lasersubtitle{
+	font-size: 30px;
+}
+
+.header-laser{
+	background-image: url("../img/laser4.jpg");
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	height:60vh;
+	margin: auto;
+}
+
+.sdw{
+	text-shadow: 2px 2px 3px black; 
+}
+.lasercard, .bibo2{
+	background: rgba(0, 136, 73, 0.5);
+}
+
+.bg-title-laser{
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5) ;
+	text-shadow: 5px 5px 6px black; 
+}
+.footer-laser{
+	background-image: url("../img/laser4.jpg");
+	/* background: rgba(0, 0, 0, 0.7) ; */
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	margin: auto;
+}
+.footer-filtre-laser{
+	display: block;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7) ;
+	text-shadow: 5px 5px 6px black;
+	padding: 30px !important; 
+	margin: 0 !important; 
+}
+.arrow-filtre-laser{
+	width: 100%;
+	background: rgba(0, 0, 0, 0.7) ;
+}
+
+/* //////////////////// */
+/* CSS REALITEVIRTUELLE */
+/* //////////////////// */
 /* CSS REALITE VIRTUELLE */
 
 #typo-vr{
@@ -119,6 +185,9 @@ strong{
 	background-attachment: fixed;
 	height:60vh;
 	margin: auto;
+}
+.vrpage{
+	font-family: 'Aldrich', sans-serif;
 }
 .vrtitle{
 	font-size: 80px;
@@ -142,13 +211,15 @@ strong{
 .vrpage article{
 	border-radius: 5px;
 }
+
 .vrpage p{
 	font-size: 1.1em;
 }
 
 .vrpage .parent {
-	display: flex;
-  }
+	display: flex; /* contexte sur le parent */
+}
+
  .vrpage .enfant {
 	margin: auto;
   }

@@ -3,9 +3,16 @@
 {% block title %}New Virtual{% endblock %}
 
 {% block body %}
-    <h1>Create new Virtual</h1>
-
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Ajouter un jeu</h2>
+    </div>
+    <div class="container d-flex">
+        <div class="pl-5 w-50 text-center col-12">
     {{ include('virtual/_form.html.twig') }}
-
-    <a href="{{ path('virtual_index') }}">back to list</a>
+      </div>
+    </div>
+    <hr>
+    <div class="p-3">
+        <a class="btn btn-primary text-white" href="{{ path('virtual_index') }}">Retour</a>
+    </div>
 {% endblock %}

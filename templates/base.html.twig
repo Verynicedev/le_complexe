@@ -48,7 +48,7 @@
                         <a class="dropdown-item" href="{{ path('category_virtual_new') }}">Nouvelle catégorie</a>
                     {% else %}
                     <li class="nav-item">
-                        <a class="nav-link" onclick="dynamicNav()" href="{{path('restaurant')}}">Restaurant<span class="sr-only">(current)</span></a>
+                        <a class="nav-link" onclick="dynamicNav()" href="{{path('restaurant')}}"><img src="img/burger.svg" height="30px" width="30px" color="white">Restaurant<span class="sr-only">(current)</span></a>
                     </li>
                     {% endif %}
                     {% if is_granted('ROLE_SUPER_ADMIN') %}

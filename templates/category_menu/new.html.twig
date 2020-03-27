@@ -1,11 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}New CategoryMenu{% endblock %}
 
 {% block body %}
-    <h1>Create new CategoryMenu</h1>
-
-    {{ include('category_menu/_form.html.twig') }}
-
-    <a href="{{ path('category_menu_index') }}">back to list</a>
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Ajouter une catégorie</h2>
+    </div>
+    <div class="container d-flex ">
+        <div class="pl-5 w-50 text-center col-8 mx-auto">
+            {{ include('category_menu/_form.html.twig') }}
+        </div>
+    </div>
+    <hr>
+    <div class="p-3">
+        <a href="{{ path('category_menu_index') }}" class="btn btn-primary text-white">Retour</a>
+    </div>
 {% endblock %}

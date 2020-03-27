@@ -1,13 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}CategoryMenu index{% endblock %}
 
 {% block body %}
-    <h1>CategoryMenu index</h1>
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Liste des menus</h2>
+    </div>
 
     <table class="table">
         <thead>
-            <tr>
+            <tr  class="bg-primary text-white">
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Image</th>
@@ -21,17 +23,18 @@
                 <td>{{ category_menu.nom }}</td>
                 <td>{{ category_menu.image }}</td>
                 <td>
-                    <a href="{{ path('category_menu_show', {'id': category_menu.id}) }}">show</a>
-                    <a href="{{ path('category_menu_edit', {'id': category_menu.id}) }}">edit</a>
+                    {# <a href="{{ path('category_menu_show', {'id': category_menu.id}) }}">show</a> #}
+                    <a href="{{ path('category_menu_edit', {'id': category_menu.id}) }}" class="btn btn-primary text-white">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="4">no records found</td>
+                <td colspan="7">Aucun résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('category_menu_new') }}">Create new</a>
+    <div class="p-3">
+    <a href="{{ path('category_menu_new') }}" class="btn btn-primary text-white">Nouveau</a>
+    </div>
 {% endblock %}

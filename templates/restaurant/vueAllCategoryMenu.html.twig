@@ -6,9 +6,13 @@
 <main>
     <div class="mt-5">
         <h3 class="text-primary text-center">Choisis ton repas</h3>
-        <div class="text-center py-3 articles-about">
+        <div class="text-center py-3 articles-about row">
             {% for category in categories %}
+            <div class="col-6 mx-auto">
             <a href="{{ url('categoryMenu',{id:category.id}) }}" class="text-primary">{{ category.nom }}</a>
+        
+            <img src="{{ asset(category.image) }}" alt="{{category.nom }}" width="150">
+           </div>
             {% endfor %}
         </div>   
     </div>

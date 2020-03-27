@@ -1,11 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}New CategoryTarif{% endblock %}
 
 {% block body %}
-    <h1>Create new CategoryTarif</h1>
-
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Ajouter une catégorie</h2>
+    </div>
+    <div class="pl-5">
     {{ include('category_tarif/_form.html.twig') }}
-
-    <a href="{{ path('category_tarif_index') }}">back to list</a>
+    </div>
+    <div class="p-3">
+    <a href="{{ path('category_tarif_index') }}" class="btn btn-primary text-white">Retour</a>
+</div>
 {% endblock %}

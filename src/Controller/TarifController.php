@@ -18,7 +18,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class TarifController extends AbstractController
 {
     /**
-     * @Route("/", name="tarif_index", methods={"GET"})
+     * @Route("/admin", name="tarif_index", methods={"GET"})
      */
     public function index(Request $request, TarifRepository $tarifRepository): Response
     {

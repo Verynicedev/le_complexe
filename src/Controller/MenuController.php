@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 /**
- * @Route("/menu")
+ * @Route("/admin/menu")
  */
 class MenuController extends AbstractController
 {

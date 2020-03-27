@@ -13,27 +13,27 @@ class TarifFixtures extends Fixture
     {
         $tarif = new Tarif();
         $tarif->setNom('Tarif Client')
-              ->setPrix1('9')
-              ->setPrix2('17')
-              ->setPrix3('24')
+              ->setPrix1('9 €')
+              ->setPrix2('17 €')
+              ->setPrix3('24 €')
               ->setCategory($this->getReference(CategoryTarifFixtures::CATEGORY_1))
         ;
         $manager->persist($tarif);
         
         $tarif2 = new Tarif();
         $tarif2->setNom('Tarif Groupe')
-              ->setPrix1('8')
-              ->setPrix2('15')
-              ->setPrix3('21')
+              ->setPrix1('8 €')
+              ->setPrix2('15 €')
+              ->setPrix3('21 €')
               ->setCategory($this->getReference(CategoryTarifFixtures::CATEGORY_1))
         ;
         $manager->persist($tarif2);
 
         $tarif = new Tarif();
         $tarif->setNom('Tarif Abonné')
-              ->setPrix1('6')
-              ->setPrix2('11')
-              ->setPrix3('15')
+              ->setPrix1('6 €')
+              ->setPrix2('11 €')
+              ->setPrix3('15 €')
               ->setCategory($this->getReference(CategoryTarifFixtures::CATEGORY_1))
         ;
         $manager->persist($tarif);

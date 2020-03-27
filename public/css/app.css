@@ -191,11 +191,9 @@ strong{
 /* //////////////////// */
 /* CSS REALITEVIRTUELLE */
 /* //////////////////// */
-/* CSS REALITE VIRTUELLE */
 
-#typo-vr{
-	font-family: 'Aldrich', sans-serif;
-}
+
+
 .header-vr{
 	background-image: url("../img/headervr.jpg");
 	opacity: 0.8;
@@ -236,7 +234,7 @@ strong{
 }
 
 .vrpage .parent {
-	display: flex; /* contexte sur le parent */
+	display: flex;
 }
 
  .vrpage .enfant {
@@ -261,7 +259,7 @@ strong{
 }
 
 .catvr{
-	background-image: url("../img/headervr.jpg");
+	background-image: url("../img/oculusrift.jpg");
 	background-position: center;
 	background-size: cover;
 	margin: auto;
@@ -272,8 +270,5 @@ strong{
 .titlecatvr{
 	background-color: rgba(37, 52, 163, 0.5);
 }
-/* 
-.divcatvr{
-	height: 700px;
-} */
+
 

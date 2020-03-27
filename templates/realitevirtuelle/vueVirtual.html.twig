@@ -1,24 +1,36 @@
-{% extends 'base.html.twig' %}
+{% extends 'realitevirtuelle/base.html.twig' %}
 
 
 {% block title %}{{ jeu.nom }} - VR{% endblock %}
 
 {% block body %}
-<main>
-    <div class="row col-12 mx-auto text-center text-white">
-        <h1 class=" text-center text-white">{{ jeu.category.nom }}</h1>
-        <div class="col-12">
-            <h3 class="text-white">{{ jeu.nom }}</h3>
-            <div class="col-12">
-                <img src="{{ asset(jeu.image) }}" alt="{{ jeu.nom }}" width="100">
-            </div>
-            <div class="mt-5">
-                <span>{{ jeu.description }}</span>
-            </div>
-            
+<main class="bg-primary vrpage">
+  <div class="header-vr d-flex align-items-center justify-content-center mb-5">
+        <div class=" mx-auto w-100 bg-title-vr">
+            <h1 class="text-white text-center p-3 vrtitle"> Réalité Virtuelle </h1>
+            <p class="text-white text-center p-3 vrsubtitle h3 font-weight-light"> Vivre de nouvelles expériences </p>
         </div>
-        <a href="{{ url('categoryVR',{id:jeu.category.id}) }}">back to list</a>
-    </div>
+    </div> 
+        <div class="col-sm-12 col-md-12 col-lg-6 col-xl-6 mx-auto my-auto">                         
+            <img src="{{ asset(jeu.image) }}" alt="{{ jeu.nom }}" width="100%" class=" img-fluid rounded border border-primary">
+        </div>
+     <div class="text-white mb-3 col-sm-12 col-md-8 col-lg-8 col-xl-8 mx-auto">
+                    <div class=" col-12  mt-5">
+                    
+                        <article class="m-auto col-12 row"> 
+                           
+                            <div class="col-12 mx-auto">                            
+                                <h4 class=" text-center pb-sm-1 pb-md-1 pt-sm-2 pt-md-2">{{ jeu.nom }}</h4>
+                                <hr>
+                                <p class="">{{ jeu.description }}</p>
+                            </div>
+                        </article>
+                    </div> 
+                             
+                </div>
+                <div>
+                <a class="card-link btn titlecatvr sdw rounded text-light" href="{{ url('categoryVR',{id:jeu.category.id}) }}">Retour</a>    
+                </div>
 
 </main>
 

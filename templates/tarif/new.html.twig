@@ -1,11 +1,18 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}New Tarif{% endblock %}
 
 {% block body %}
-    <h1>Create new Tarif</h1>
-
-    {{ include('tarif/_form.html.twig') }}
-
-    <a href="{{ path('tarif_index') }}">back to list</a>
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Ajouter un tarif</h2>
+    </div>
+    <div class="container d-flex">
+        <div class="pl-5 w-50 text-center col-12">
+            {{ include('tarif/_form.html.twig') }}
+        </div>
+    </div>
+    <hr>
+    <div class="p-3">
+        <a href="{{ path('tarif_index') }}" class="btn btn-primary text-white">Retour</a>
+    </div>
 {% endblock %}

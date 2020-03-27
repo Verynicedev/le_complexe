@@ -41,11 +41,11 @@
                         <div class="dropdown-menu">
                         <a class="dropdown-item" onclick="dynamicNav()" href="{{path('restaurant')}}">Restaurant<span class="sr-only">(current)</span></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ path('virtual_index') }}">Liste des menus</a>
-                        <a class="dropdown-item" href="{{ path('virtual_new') }}">Nouveau menu</a>
+                        <a class="dropdown-item" href="{{ path('menu_index') }}">Liste des menus</a>
+                        <a class="dropdown-item" href="{{ path('menu_new') }}">Nouveau menu</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{{ path('category_virtual_index') }}">Liste des catégories</a>
-                        <a class="dropdown-item" href="{{ path('category_virtual_new') }}">Nouvelle catégorie</a>
+                        <a class="dropdown-item" href="{{ path('category_menu_index') }}">Liste des catégories</a>
+                        <a class="dropdown-item" href="{{ path('category_menu_new') }}">Nouvelle catégorie</a>
                     {% else %}
                     <li class="nav-item">
                         <a class="nav-link" onclick="dynamicNav()" href="{{path('restaurant')}}">Restaurant<span class="sr-only">(current)</span></a>

@@ -23,7 +23,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class HomeController extends AbstractController
 {
     /**
-     * @Route("/home", name="homepage1")
+     * @Route("/", name="homepage")
      */
     public function home(Request $request)
     {

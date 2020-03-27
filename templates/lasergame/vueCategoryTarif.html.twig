@@ -19,7 +19,7 @@
             {% for tarif in tarifs %}
             
                 <!-- nos formules (changer l'id) -->
-                {% if tarif.category.id == 6 %} 
+                {% if tarif.category.id == 2 %} 
                     <div class="col-5 text-center mt-5 mx-auto">
                         <div class="card bibo3 text-white sdw{% if loop.first %}{% endif %}">
                             <h3 class="card-header">{{ tarif.nom }}</h3>
@@ -31,7 +31,7 @@
                     </div>
 
                 <!-- nos tarifs (changer l'id) -->
-                {% elseif tarif.category.id == 5 %}
+                {% elseif tarif.category.id == 1 %}
                     <div class="col-5 text-center mt-5 mx-auto">
                         <div class="card bibo3 text-white sdw{% if loop.first %}{% endif %}">
                             <h3 class="card-header">{{ tarif.nom }}</h3>

@@ -15,14 +15,19 @@ class CategoryVirtualFixtures extends Fixture
     {
         $category = new CategoryVirtual();
         $category->setNom('Tout public');
+        $category->setImage('img/salle2.jpg');
         $manager->persist($category);
 
         $category2 = new CategoryVirtual();
         $category2->setNom('Interdit aux -16 ans');
+        $category2->setImage('img/salle2.jpg');
+
         $manager->persist($category2);
 
         $category6 = new CategoryVirtual();
         $category6->setNom('Interdit aux -18 ans');
+        $category6->setImage('img/salle2.jpg');
+
         $manager->persist($category6);
 
         $manager->flush();

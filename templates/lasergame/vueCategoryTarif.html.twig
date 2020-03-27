@@ -4,53 +4,57 @@
 {% block body %}
 <main class="bg-primary">
 <div class="header-laser d-flex align-items-center justify-content-center">
-            <div class=" mx-auto w-100 bg-title-laser text-center">
-                <h1 class="lasertitle text-white p-3">Laser Game Arena</h1>
-                <h3 class="lasersubtitle text-danger"></h3>
-                <p class="lasersubtitle h3 text-white p-3 font-weight-light">En famille ou entre amis</p>
-            </div>
-        </div>
-    <h2 class="mt-5 text-center text-white"> {{ category.nom }} </h2>
-    <div class="row">
-        {% for tarif in tarifs %}
+    <div class=" mx-auto w-100 bg-title-laser text-center">
+        <h1 class="lasertitle text-white p-3">Laser Game Arena</h1>
+        <h3 class="lasersubtitle text-danger"></h3>
+        <p class="lasersubtitle h3 text-white p-3 font-weight-light">En famille ou entre amis</p>
+    </div>
+</div>
 
-        <!-- nos formules (changer l'id) -->
-        {% if tarif.category.id == 8 %} 
-            <div class="col-4 text-center mt-5 mx-auto">
-                <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
-                    <h3 class="card-header">{{ tarif.nom }}</h3>
-                    <div class="card-body">
-                        <p> {{tarif.description}} </p>
-                        <h5 class="card-title"> Par personne : {{ tarif.prix1 }} €</h5>
+<div class="body-laser text bg-primary  container-fluid">
+    <div class="bg-primary py-5">
+        <h2 class="card-header bibo3 sdw my-5 text-center text-white">{{ category.nom }}</h2>
+        <div class="row py-5">
+            
+            {% for tarif in tarifs %}
+            
+                <!-- nos formules (changer l'id) -->
+                {% if tarif.category.id == 6 %} 
+                    <div class="col-5 text-center mt-5 mx-auto">
+                        <div class="card bibo3 text-white sdw{% if loop.first %}{% endif %}">
+                            <h3 class="card-header">{{ tarif.nom }}</h3>
+                            <div class="card-body">
+                                <p class="font-italic"> {{tarif.description}} </p>
+                                <p class="h5 card-title">{{ tarif.prix1 }}€ / Personne</p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="card-body">
+
+                <!-- nos tarifs (changer l'id) -->
+                {% elseif tarif.category.id == 5 %}
+                    <div class="col-5 text-center mt-5 mx-auto">
+                        <div class="card bibo3 text-white sdw{% if loop.first %}{% endif %}">
+                            <h3 class="card-header">{{ tarif.nom }}</h3>
+                            <div class="card-body">
+                                <h5 class="card-title"> 1 partie : {{ tarif.prix1 }} €</h5>
+                                <h5 class="card-title"> 2 parties : {{ tarif.prix2 }} €</h5>
+                                <h5 class="card-title"> 3 parties : {{ tarif.prix3 }} €</h5>
+                            </div>
+                        </div>
                     </div>
+                {% endif %}
+
+            {% endfor %}
+
+            </div>
+            <div class="row py-5 bg-primary">
+                <div class="col-3">
+                    <a class="card-link btn bibo3 sdw rounded text-light" href="{{ path('allcategorytarif') }}">Retour</a>
                 </div>
             </div>
-
-            <!-- nos tarifs (changer l'id) -->
-            {% elseif tarif.category.id == 7 %}
-            <div class="col-4 text-center mt-5 mx-auto">
-                <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
-                    <h3 class="card-header">{{ tarif.nom }}</h3>
-                    <div class="card-body">
-                        <h5 class="card-title"> 1 partie : {{ tarif.prix1 }} €</h5>
-                        <h5 class="card-title"> 2 parties : {{ tarif.prix2 }} €</h5>
-                        <h5 class="card-title"> 3 parties : {{ tarif.prix3 }} €</h5>
-                    </div>
-                    <div class="card-body">
-                    </div>
-                </div>
-            </div>
-            {% endif %}
-        {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <a class="text-white" href="{{ path('allcategorytarif') }}">Retour à la liste des catégories</a>
         </div>
     </div>
-
+</div>
 </main>
 
 {% endblock %}

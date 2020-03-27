@@ -102,7 +102,7 @@ class CategoryTarifController extends AbstractController
         $form2 = $this->createForm(CategoryTarifType::class, $categoryTarif);
         $form2->handleRequest($request);
 
-        if ($form3->isSubmitted() && $form3->isValid()) {
+        if ($form2->isSubmitted() && $form2->isValid()) {
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('category_tarif_index');

@@ -22,18 +22,18 @@
                 <td>{{ category_tarif.nom }}</td>
                 <td>
                     {# <a href="{{ path('category_tarif_show', {'id': category_tarif.id}) }}" class="btn btn-primary text-white">show</a> #}
-                    <a href="{{ path('category_tarif_edit', {'id': category_tarif.id}) }}" class="btn btn-primary text-white">edit</a>
+                    <a href="{{ path('category_tarif_edit', {'id': category_tarif.id}) }}" class="btn btn-primary text-white">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="3">no records found</td>
+                <td colspan="3">Aucun résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
     <hr>
     <div class="p-3"> 
-    <a href="{{ path('category_tarif_new') }}" class="btn btn-primary text-white">Create new</a>
+    <a href="{{ path('category_tarif_new') }}" class="btn btn-primary text-white">Nouveau</a>
     </div>
 {% endblock %}

@@ -7,8 +7,12 @@
         <h2 class="pt-5 mt-5 text-center ">Editer une catégorie</h2>
     </div>
 <div class="pl-5">
-    {{ include('category_tarif/_form.html.twig', {'button_label': 'Update'}) }}
-    {{ include('category_tarif/_delete_form.html.twig') }}
+    <div class="pb-2">
+        {{ include('category_tarif/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    </div>
+    <div>
+        {{ include('category_tarif/_delete_form.html.twig') }}
+    </div>
 </div>
 <hr>
 <div class="p-3">

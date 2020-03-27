@@ -30,18 +30,18 @@
                 <td>{{ tarif.prix3 }}</td>
                 <td>
                     {# <a href="{{ path('tarif_show', {'id': tarif.id}) }}" class="btn btn-primary text-white">show</a> #}
-                    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}" class="btn btn-primary text-white">edit</a>
+                    <a href="{{ path('tarif_edit', {'id': tarif.id}) }}" class="btn btn-primary text-white">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="7">no records found</td>
+                <td colspan="7">Aucun résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
     <hr>
     <div class="p-3"> 
-    <a href="{{ path('tarif_new') }}" class="btn btn-primary text-white">Create new</a>
+    <a href="{{ path('tarif_new') }}" class="btn btn-primary text-white">Nouveau</a>
     </div>
 {% endblock %}

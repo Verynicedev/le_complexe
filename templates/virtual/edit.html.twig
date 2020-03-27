@@ -1,13 +1,24 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
-{% block title %}Edit Virtual{% endblock %}
+{% block title %}Jeux VR{% endblock %}
 
 {% block body %}
-    <h1>Edit Virtual</h1>
+     <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Editer un tarif</h2>
+    </div>
 
+<div class="pl-5">
+    <div class="pb-2 w-75">
     {{ include('virtual/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('virtual_index') }}">back to list</a>
-
+    </div>
+<div>
     {{ include('virtual/_delete_form.html.twig') }}
+    </div>
+ </div>
+
+<hr>
+<div class="p-3">
+    <a href="{{ path('virtual_index') }}">back to list</a>
+</div>
+    
 {% endblock %}

@@ -24,7 +24,6 @@ class TarifType extends AbstractType
                 'class'=> CategoryTarif::class,
                 'choice_label'=>'nom',
                 // 'expanded'=> 'true',
-                'placeholder'=>'--|====> Choisir une catégorie  <====|--',
                 'query_builder' => function (EntityRepository $er){
                     return $er->createQueryBuilder('c')
                             ->orderBy('c.nom','ASC');

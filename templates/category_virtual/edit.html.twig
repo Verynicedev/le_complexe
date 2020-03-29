@@ -1,13 +1,22 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}Edit CategoryVirtual{% endblock %}
 
 {% block body %}
-    <h1>Edit CategoryVirtual</h1>
-
-    {{ include('category_virtual/_form.html.twig', {'button_label': 'Update'}) }}
-
-    <a href="{{ path('category_virtual_index') }}">back to list</a>
-
-    {{ include('category_virtual/_delete_form.html.twig') }}
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Editer une catégorie</h2>
+    </div>
+<div class="pl-5">
+    <div class="pb-2 w-75">
+        {{ include('category_virtual/_form.html.twig', {'button_label': 'Mettre à jour'}) }}
+    </div>
+    <div>
+        {{ include('category_virtual/_delete_form.html.twig') }}
+    </div>
+</div>
+<hr>
+<div class="p-3">
+    <a href="{{ path('category_virtual_index') }}" class="btn btn-primary text-white">Retour</a>
+</div>
+    
 {% endblock %}

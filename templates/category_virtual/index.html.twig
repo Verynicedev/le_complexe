@@ -1,9 +1,11 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}CategoryVirtual index{% endblock %}
 
 {% block body %}
-    <h1>CategoryVirtual index</h1>
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Liste des catégories</h2>
+    </div>
 
     <table class="table">
         <thead>
@@ -20,7 +22,7 @@
                 <td>{{ category_virtual.nom }}</td>
                 <td>
                     {# <a href="{{ path('category_virtual_show', {'id': category_virtual.id}) }}">show</a> #}
-                    <a class="btn btn-primary text-white" href="{{ path('category_virtual_edit', {'id': category_virtual.id}) }}">edit</a>
+                    <a class="btn btn-primary text-white" href="{{ path('category_virtual_edit', {'id': category_virtual.id}) }}"class="btn btn-primary text-white">Modifier</a>
                 </td>
             </tr>
         {% else %}

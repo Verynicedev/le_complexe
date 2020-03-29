@@ -1,13 +1,15 @@
-{% extends 'base.html.twig' %}
+{% extends 'category_tarif/base.html.twig' %}
 
 {% block title %}Menu index{% endblock %}
 
 {% block body %}
-    <h1>Menu index</h1>
+    <div class="pt-2 mt-2">
+        <h2 class="pt-5 mt-5 text-center ">Liste des menus</h2>
+    </div>
 
     <table class="table">
         <thead>
-            <tr>
+            <tr  class="bg-primary text-white">
                 <th>Id</th>
                 <th>Nom</th>
                 <th>Description</th>
@@ -25,17 +27,19 @@
                 <td>{{ menu.image }}</td>
                 <td>{{ menu.prix }}</td>
                 <td>
-                    <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a>
+                    {# <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a> #}
+                    <a href="{{ path('menu_edit', {'id': menu.id}) }}" class="btn btn-primary text-white">Modifier</a>
                 </td>
             </tr>
         {% else %}
             <tr>
-                <td colspan="6">no records found</td>
+                <td colspan="7">Aucun résultat</td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
-
-    <a href="{{ path('menu_new') }}">Create new</a>
+    <hr>
+    <div class="p-3"> 
+        <a href="{{ path('menu_new') }}" class="btn btn-primary text-white">Nouveau</a>
+    </div>
 {% endblock %}

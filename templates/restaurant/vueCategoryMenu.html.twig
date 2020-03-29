@@ -1,32 +1,67 @@
-{% extends 'base.html.twig' %}
+{% extends 'restaurant/base.html.twig' %}
 {% block title %}Menu Restaurants- Le Complexe{% endblock %}
 
 {% block body %}
-<main>
-    <h2 class="mt-5 text-center text-primary"> {{ category.nom }} </h2>
-    <div class="row">
-        {% for menu in menus %}
-            <div class="col-4 text-center mt-5 mx-auto">
-                <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
-                    <h3 class="card-header">{{ menu.nom }}</h3>
-                    <div class="card-body">
-                        <h5 class="card-title"> {{ menu.category.nom }}</h5>
-                        <img src="{{ asset(menu.image) }}" alt="{{ menu.category.nom }}" width="100%">
-                    </div>
-                    <div class="card-body">
-                        <p> {{menu.description}}</p>
-                        <h3> {{menu.prix}}</p>
-                    </div>
-                </div>
-            </div>
-            
-        {% endfor %}
-    </div>
-    <div class="row">
-        <div class="col-3">
-            <a class="text-white" href="{{ path('allcategoryMenu') }}">Retour à la liste des catégories</a>
+<main class="bg-primary restopage">
+
+    <div class="header-resto d-flex align-items-center justify-content-center">
+        <div class=" mx-auto w-100 bg-title-laser text-center">
+            <h1 class="lasertitle text-white p-3">Jungle Bar</h1>
+            <h3 class="lasersubtitle text-danger"></h3>
+            <p class="lasersubtitle h3 text-white p-3 font-weight-light">Gratuit seulement pour Laeti, Nagib, Younes et Eddy</p>
         </div>
     </div>
+
+    <div class="body-resto text bg-primary  container-fluid">
+        <div class="bg-primary py-5">
+            <h2 class="mt-5 text-center text-white bibo sdw"> {{ category.nom }} </h2>
+            <div class="row">
+                {% for menu in menus %}
+                    <div class="col-4 text-center  mt-5 mx-auto sdw">
+                        <div class="card text-light titlecatresto mb-3 {% if loop.first %} {% endif %}">
+                            <h3 class="card-header">{{ menu.nom }}</h3>
+                            <div class="card-body">
+                                <h5 class="card-title"> {{ menu.category.nom }}</h5>
+                                <img src="{{ asset(menu.image) }}" alt="{{ menu.category.nom }}" width="100%" class="rounded">
+                            </div>
+                        </div>
+                    </div>
+                    
+                {% endfor %}
+            </div>
+            <div class="row pt-5">
+                <div class="col-3">
+                    <a class="card-link btn titlecatresto sdw rounded text-light" href="{{ path('allcategoryMenu') }}">Retour</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                                    {# <h2 class="mt-5 text-center text-primary"> {{ category.nom }} </h2>
+                                    <div class="row">
+                                    {% for menu in menus %}
+                                    <div class="col-4 text-center mt-5 mx-auto">
+                                    <div class="card mb-3 {% if loop.first %} bg-secondary{% endif %}">
+                                    <h3 class="card-header">{{ menu.nom }}</h3>
+                                    <div class="card-body">
+                                    <h5 class="card-title"> {{ menu.category.nom }}</h5>
+                                    <img src="{{ asset(menu.image) }}" alt="{{ menu.category.nom }}" width="100%">
+                                    </div>
+                                    <div class="card-body">
+                                    <p> {{menu.description}}</p>
+                                    <h3> {{menu.prix}}</p>
+                                    </div>
+                                    </div>
+                                    </div>
+
+                                    {% endfor %}
+                                    </div>
+                                    <div class="row">
+                                    <div class="col-3">
+                                    <a class="text-white" href="{{ path('allcategoryMenu') }}">Retour à la liste des catégories</a>
+                                    </div>
+                                    </div> #}
 
 </main>
 

@@ -106,6 +106,17 @@ strong{
 	width: 100%;
 	background: rgba(0, 0, 0, 0.7) ;
 }
+.catresto{
+	background-image: url("../img/plancheboisresto.jpg");
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 350px;
+	border: solid  rgba(255, 183, 0, 0.5) 2px;
+}
+.titlecatresto{
+	background-color: rgba(255, 183, 0, 0.5);
+}
 
 /* ////////////// */
 /* CSS LASERGAME */

@@ -27,8 +27,8 @@
                 <td>{{ menu.image }}</td>
                 <td>{{ menu.prix }}</td>
                 <td>
-                    {# <a href="{{ path('menu_show', {'id': menu.id}) }}">show</a> #}
-                    <a href="{{ path('menu_edit', {'id': menu.id}) }}" class="btn btn-primary text-white">Modifier</a>
+                    <a class="btn btn-primary" href="{{ path('menu_show', {'id': menu.id}) }}">show</a>
+                    <a class="btn btn-primary" href="{{ path('menu_edit', {'id': menu.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

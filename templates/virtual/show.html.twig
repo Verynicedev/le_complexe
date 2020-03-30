@@ -9,12 +9,16 @@
             <div class="col-12 text-center">
                 <h3>{{ virtual.nom }}</h3>
             </div>
+            <div class="col-12">
+                <p> {{ virtual.category.nom }} </p>
+            </div>
             <div class=" mx-auto">
                 <img src="{{ asset(virtual.image) }}" alt="{{ virtual.nom }}" width="100">
             </div>
             <div class="col-12">
                 <p> {{ virtual.description }} </p>
             </div>
+
         </div>
         <div class="col-12 text-center">
             <a href="{{ path('virtual_edit', {'id': virtual.id}) }}">edit</a>

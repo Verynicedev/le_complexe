@@ -282,4 +282,11 @@ strong{
 	background-color: rgba(37, 52, 163, 0.5);
 }
 
-
+.bgImgVirtual{
+	background-image: var(--bg);
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 350px;
+	border: solid  rgba(37, 52, 163, 0.7) 2px;
+}

@@ -12,7 +12,8 @@
             <tr class="bg-primary text-white">
                 <th>Id</th>
                 <th>Nom</th>
-                <th>actions</th>
+                <th>Catégorie</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -20,9 +21,10 @@
             <tr>
                 <td>{{ virtual.id }}</td>
                 <td>{{ virtual.nom }}</td>
+                <td>{{ virtual.category.nom }}</td>
                 <td>
-                    {# <a href="{{ path('virtual_show', {'id': virtual.id}) }}">show</a> #}
-                    <a href="{{ path('virtual_edit', {'id': virtual.id}) }}" class="btn btn-primary text-white">Modifier</a>
+                    <a class="btn btn-primary" href="{{ path('virtual_show', {'id': virtual.id}) }}">show</a>
+                    <a class="btn btn-primary" href="{{ path('virtual_edit', {'id': virtual.id}) }}">edit</a>
                 </td>
             </tr>
         {% else %}

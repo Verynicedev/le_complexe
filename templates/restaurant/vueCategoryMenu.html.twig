@@ -20,7 +20,7 @@
                         <div class="card text-light titlecatresto mb-3 {% if loop.first %} {% endif %}">
                             <h3 class="card-header">{{ menu.nom }}</h3>
                             <div class="card-body">
-                                <h5 class="card-title"> {{ menu.category.nom }}</h5>
+                                <h5 class="card-title"> {{ menu.description }}</h5>
                                 <img src="{{ asset(menu.image) }}" alt="{{ menu.category.nom }}" width="100%" class="img-fluid rounded">
                             </div>
                         </div>

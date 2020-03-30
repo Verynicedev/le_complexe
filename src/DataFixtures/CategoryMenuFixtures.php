@@ -19,7 +19,7 @@ class CategoryMenuFixtures extends Fixture
     {
 
         $categoryMenu = new CategoryMenu();
-        $categoryMenu->setNom('Nos burger');
+        $categoryMenu->setNom('Nos Burgers');
         $categoryMenu->setImage('img/burger.png');
         $manager->persist($categoryMenu);
 
@@ -29,7 +29,7 @@ class CategoryMenuFixtures extends Fixture
         $manager->persist($categoryMenu2);
 
         $categoryMenu3 = new CategoryMenu();
-        $categoryMenu3->setNom('Nos Rosties and steak');
+        $categoryMenu3->setNom('Nos Rosties and Steaks');
         $categoryMenu3->setImage('img/rostie.jpg');
         $manager->persist($categoryMenu3);
 
@@ -39,7 +39,7 @@ class CategoryMenuFixtures extends Fixture
         $manager->persist($categoryMenu4);
 
         $categoryMenu5 = new CategoryMenu();
-        $categoryMenu5->setNom('Nos desserts');
+        $categoryMenu5->setNom('Nos Desserts');
         $categoryMenu5->setImage('img/sunday.jpg');
         $manager->persist($categoryMenu5);
 

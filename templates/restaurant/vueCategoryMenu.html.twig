@@ -14,7 +14,6 @@
 
     <div class="body-resto text bg-primary  container-fluid">
         <div class="bg-primary py-5">
-            <h2 class="mt-5 text-center text-white bibo sdw"> {{ category.nom }} </h2>
             <div class="row">
                 {% for menu in menus %}
                     <div class="col-10 col-sm-10 col-md-10 col-lg-5 col-xl-5 text-center  mt-5 mx-auto sdw">
@@ -22,7 +21,7 @@
                             <h3 class="card-header">{{ menu.nom }}</h3>
                             <div class="card-body">
                                 <h5 class="card-title"> {{ menu.category.nom }}</h5>
-                                <img src="{{ asset(menu.image) }}" alt="{{ menu.category.nom }}" width="100%" class="rounded">
+                                <img src="{{ asset(menu.image) }}" alt="{{ menu.category.nom }}" width="100%" class="img-fluid rounded">
                             </div>
                         </div>
                     </div>

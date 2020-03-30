@@ -16,12 +16,14 @@
             <h2 class="mt-5 text-center text-white titlecatvr sdw"> {{ category.nom }} </h2>
             <div class="row">
                 {% for jeu in jeux %}
-                    <div class="col-4 text-center  mt-5 mx-auto sdw">
+                    <div class="col-sm-10 col-md-10 col-lg-5 col-xl-5 text-center  mt-5 mx-auto sdw">
                         <div class="card text-light titlecatvr mb-3 {% if loop.first %} {% endif %}">
                             <h3 class="card-header">{{ jeu.nom }}</h3>
                             <div class="card-body">
                                 <h5 class="card-title"> {{ jeu.category.nom }}</h5>
-                                <img src="{{ asset(jeu.image) }}" alt="{{ jeu.category.nom }}" width="100%" class="rounded">
+                                <div class="">
+                                    <img src="{{ asset(jeu.image) }}" alt="{{ jeu.category.nom }}" style="height:270px;"  class="img-fluid rounded">
+                                </div>
                             </div>
                             <div>
                                 <a href="{{ url('jeuVR', {id: jeu.id}) }}" class=" btn text-light">En savoir plus &rarr;</a>

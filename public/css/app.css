@@ -290,3 +290,21 @@ strong{
 	height: 350px;
 	border: solid  rgba(37, 52, 163, 0.7) 2px;
 }
+
+.bgImgLaser{
+	background-image: var(--bg);
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 350px;
+	border: solid rgba(0, 136, 73, 0.7) 2px;
+}
+
+.bgImgResto{
+	background-image: var(--bg);
+	background-position: center;
+	background-size: cover;
+	margin: auto;
+	height: 350px;
+	border: solid  rgba(255, 183, 0, 0.5) 2px;
+}

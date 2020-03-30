@@ -13,11 +13,15 @@ class CategoryTarifFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $category = new CategoryTarif();
-        $category->setNom('Nos tarifs');
+        $category->setNom('Nos tarifs')
+                 ->setImage('img/laser.jpg')
+        ;
         $manager->persist($category);
 
         $category2 = new CategoryTarif();
-        $category2->setNom('Nos Formules');
+        $category2->setNom('Nos Formules')
+                  ->setImage('img/laser-game.jpg')
+        ;
         $manager->persist($category2);
         $manager->flush();
         $this->addReference(self::CATEGORY_1, $category);

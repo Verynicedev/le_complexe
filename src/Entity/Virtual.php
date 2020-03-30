@@ -29,10 +29,7 @@ class Virtual
      */
     private $category;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\TagVirtual", inversedBy="virtuals")
-     */
-    private $tag;
+
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -74,32 +71,6 @@ class Virtual
     public function setCategory(?CategoryVirtual $category): self
     {
         $this->category = $category;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|TagVirtual[]
-     */
-    public function getTag(): Collection
-    {
-        return $this->tag;
-    }
-
-    public function addTag(TagVirtual $tag): self
-    {
-        if (!$this->tag->contains($tag)) {
-            $this->tag[] = $tag;
-        }
-
-        return $this;
-    }
-
-    public function removeTag(TagVirtual $tag): self
-    {
-        if ($this->tag->contains($tag)) {
-            $this->tag->removeElement($tag);
-        }
 
         return $this;
     }

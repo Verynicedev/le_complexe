@@ -25,8 +25,6 @@ class VirtualRepository extends ServiceEntityRepository
         $qb ->orderBy('v.id','DESC')
             ->join('v.category','c')
             ->addSelect('c')
-            ->leftJoin('v.tag','t')
-            ->addSelect('t')
             ;
         $query = $qb->getQuery();
         return $query->getResult();
@@ -37,8 +35,6 @@ class VirtualRepository extends ServiceEntityRepository
         $qb ->orderBy('v.nom','DESC')
             ->join('v.category','c')
             ->addSelect('c')
-            ->leftJoin('v.tag','t')
-            ->addSelect('t')
             ->andWhere('c = ?1')
             ->SetParameter(1, $category)
             ;

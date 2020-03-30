@@ -27,17 +27,17 @@ class VirtualType extends AbstractType
                             ->orderBy('c.nom','ASC');
                 },
                 ])
-            ->add('tag', EntityType::class,[
-                'class'=> TagVirtual::class,
-                'choice_label'=>'nom',
-                'expanded'=> true,
-                'multiple'=> true,
-                'placeholder'=>'--|====> Choisir un tag  <====|--',
-                'query_builder' => function (EntityRepository $er){
-                    return $er->createQueryBuilder('t')
-                            ->orderBy('t.nom','ASC');
-                },
-                ])
+            // ->add('tag', EntityType::class,[
+            //     'class'=> TagVirtual::class,
+            //     'choice_label'=>'nom',
+            //     'expanded'=> true,
+            //     'multiple'=> true,
+            //     'placeholder'=>'--|====> Choisir un tag  <====|--',
+            //     'query_builder' => function (EntityRepository $er){
+            //         return $er->createQueryBuilder('t')
+            //                 ->orderBy('t.nom','ASC');
+            //     },
+            //     ])
             ->add('description')
             ->add('image')
         ;

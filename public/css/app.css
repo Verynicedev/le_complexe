@@ -290,3 +290,7 @@ strong{
 	height: 350px;
 	border: solid  rgba(37, 52, 163, 0.7) 2px;
 }
+
+.padt {
+	padding-top: 100px;
+}

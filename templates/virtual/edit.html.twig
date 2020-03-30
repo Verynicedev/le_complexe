@@ -4,12 +4,12 @@
 
 {% block body %}
      <div class="pt-2 mt-2">
-        <h2 class="pt-5 mt-5 text-center ">Editer un tarif</h2>
+        <h2 class="pt-5 mt-5 text-center ">Editer un jeu</h2>
     </div>
 
 <div class="pl-5">
     <div class="pb-2 w-75">
-    {{ include('virtual/_form.html.twig', {'button_label': 'Update'}) }}
+    {{ include('virtual/_form.html.twig', {'button_label': 'Mise à jour'}) }}
     </div>
 <div>
     {{ include('virtual/_delete_form.html.twig') }}
@@ -18,7 +18,7 @@
 
 <hr>
 <div class="p-3">
-    <a href="{{ path('virtual_index') }}">back to list</a>
+    <a href="{{ path('virtual_index') }}" class="btn btn-primary text-white">Retour</a>
 </div>
     
 {% endblock %}
